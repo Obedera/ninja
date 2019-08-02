@@ -8,12 +8,11 @@ body{
     flex-direction: column;
 }
 /* PARA HTML DO CADASTRO */
-.cadastro{
+.cadastro {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  
     background-color: #595959;
     border-radius: auto;
     width: auto;
@@ -22,7 +21,19 @@ body{
 }
 .shinobi{
     width: auto;
-    height: 200px;
+    height: 150px;
+    border-radius: 100%;
+   
+}
+
+.cadastro p, button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input{
+    border-radius: 3%;
 }
 /* COLOCAR TUDO DO HTML CADASTRO NESSE ESPAÇO */
 
@@ -46,6 +57,7 @@ label {
     display: block;
     margin-bottom: 10px;
 }
+
 /* COLOCAR TUDO DO HTML CONSOLE NESSE ESPAÇO */
 
 /* RESERVADO PARA OUTROS HTML */
