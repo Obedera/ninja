@@ -3,11 +3,17 @@
 
 
 {%block conteudo%}
-<label for="story">Digite seu Codigo aqui:</label>
 
-<textarea id="story" name="story"
-          rows="5" cols="33">
-
-</textarea>
+<form action="/console" method="POST">
+    {% csrf_token %}
+    <label for="story">Digite seu Codigo aqui:</label>
+    
+    <textarea name="debug"
+              rows="5" cols="33">
+    
+    </textarea>
+    {{msg}}
+    <input type="submit" value="Testar">
+</form>
 
 {% endblock %}
