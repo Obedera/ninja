@@ -1,5 +1,5 @@
 def analizar_css(css):
-    texto_css = css.read()
+    texto_css = css
     linha_css = texto_css.splitlines()
     Erros = ''
 

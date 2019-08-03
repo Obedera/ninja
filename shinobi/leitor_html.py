@@ -1,5 +1,5 @@
 def analizar_html(html):
-    texto_html = html.read()
+    texto_html = html
     linha_html = texto_html.splitlines()
     Erros = ''
 

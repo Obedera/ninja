@@ -1,5 +1,5 @@
 def analizar_js(js):
-    texto_js = js.read()
+    texto_js = js
     linha_js = texto_js.splitlines()
     Erros = ''
 
