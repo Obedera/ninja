@@ -3,7 +3,7 @@
 
 
 {%block conteudo%}
-{% if user is None %}
+{% if user.nome is not None %}
 
     {% load static %}
     <script src="{% static 'js/debug.js' %}" defer></script>
@@ -20,13 +20,17 @@
     {% csrf_token %}
     <label for="story">Digite seu Codigo aqui:</label>
     
-    <textarea name="debug"
+    <textarea name="debugtexto"
               rows="5" cols="33">
     
     </textarea>
     {{msg}}
     <input type="submit" value="Testar">
 </form>
+    <textarea id="debug_resposta"
+    rows="5" cols="33">
+
+    </textarea>
 {% else %}
 
 <h1>Poxa cara, cê precisa se cadastrar para usar o debugador </h1>

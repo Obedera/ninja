@@ -1,4 +1,6 @@
-from django.shortcuts import render
+import json
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from shinobi.models import Cadastro
 from shinobi.leitor_html import analizar_html
 from shinobi.leitor_js import analizar_js
@@ -41,8 +43,10 @@ def login(request):
 
 def console(request):
     if request.method == 'POST':
-        html = analizar_html(request.POST.get('debug'))
-        args = {'msg':html}
-        
-        return render(request, 'console.html', args)
+        texto_convertido = json.loads(request.POST.get('json')) 
+        html = analizar_html(texto_convertido['texto'])
+        print(html)
+        return JsonResponse({'texto':html}, status=200)
+
+
     return render(request, 'console.html',{})
