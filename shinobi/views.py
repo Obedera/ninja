@@ -30,11 +30,12 @@ def login(request):
         email_log = request.POST.get('email')
         validacao = request.POST.get('senha')
         user = Cadastro.objects.filter(email=email_log, senha=validacao).first()
-        if user is not None:
-            print('ops veio aq')
-            return render(request, 'console.html')
+        if user is True:
+            print('verdadeiro')
+            context = {'mensag': 'Olá'}
+            return render(request, 'console.html', user, context)
         else:
-            print('errouuu')
+            print('errou')
             context = {'mensag': 'e-mail ou senha incorretos :('}
             return render(request, 'cadastro.html', context)
     return render(request, 'cadastro.html')

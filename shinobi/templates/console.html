@@ -11,7 +11,7 @@
 <p></p>
 
 </nav>
-
+{% if user is True %}
 
 <label for="story">Digite seu Codigo aqui:</label>
 
@@ -26,5 +26,9 @@
     {{msg}}
     <input type="submit" value="Testar">
 </form>
+{% else %}
 
+<h1>Poxa cara, cê precisa se cadastrar para usar o debugador </h1>
+
+{% endif %}
 {% endblock %}
