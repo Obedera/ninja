@@ -1,9 +1,33 @@
 <!-- Pagina para Login/Cadastro e talvez outras informaçoes  -->
 {%extends 'shared/layout.html'%}
 {%block conteudo%}
+<h6>Cadastro</h6>
 <form action="/" method="POST">
     {% csrf_token %}
+    {{msg}}
+    <label>Nome</label>
+    <input type="text" name="nome" required>
 
+    <label>Sobrenome</label>
+    <input type="text" name="sobrenome" required>
+
+    <label>Gênero</label>
+    <select name="genero" required>
+        <option value="MA">Masculino</option>
+        <option value="FE">Feminino</option>
+        <option value="OU">Outros</option>
+    </select>
+
+    <label>E-mail</label>
+    <input type="email" name="email" required>
+
+    <label>senha</label>
+    <input type="number" name="senha" required>
+
+    <label>Confirmar Senha</label>
+    <input type="number" name="confirmar_senha" required>
+
+    <input type="submit" value="Cadastrar">
 </form>
 
 <div class="cadastro">

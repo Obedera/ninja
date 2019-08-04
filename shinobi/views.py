@@ -15,7 +15,7 @@ def index(request):
         usuario.genero = request.POST.get('genero')
         usuario.email = request.POST.get('email')
         usuario.senha = request.POST.get('senha')
-        usuario.confirmar_senha = request.POST.get('confirma_senha')
+        usuario.confirmar_senha = request.POST.get('confirmar_senha')
         if usuario.senha == usuario.confirmar_senha:
             usuario.save()
             context = {'msg': 'usuário cadastrado, faça login'}
