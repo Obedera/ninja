@@ -3,7 +3,7 @@
 
 
 {%block conteudo%}
-{% if user is not None %}
+{% if user is None %}
 
     {% load static %}
     <script src="{% static 'js/debug.js' %}" defer></script>
