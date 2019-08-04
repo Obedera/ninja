@@ -9,14 +9,13 @@ from shinobi.leitor_css import analizar_css
 
 def index(request):
     if request.method == 'POST':
-        usuario = Cadastro()
-        usuario.nome = request.POST.get('nome')
-        usuario.sobrenome = request.POST.get('sobrenome')
-        usuario.genero = request.POST.get('genero')
-        usuario.email = request.POST.get('email')
-        usuario.senha = request.POST.get('senha')
-        usuario.confirmar_senha = request.POST.get('confirmar_senha')
-        if usuario.senha == usuario.confirmar_senha:
+        if request.POST.get('senha') == request.POST.get('confirmar_senha'):
+            usuario = Cadastro()
+            usuario.nome = request.POST.get('nome')
+            usuario.sobrenome = request.POST.get('sobrenome')
+            usuario.genero = request.POST.get('genero')
+            usuario.email = request.POST.get('email')
+            usuario.senha = request.POST.get('senha')
             usuario.save()
             context = {'msg': 'usuário cadastrado, faça login'}
             return render(request, 'cadastro.html', context)
@@ -30,10 +29,10 @@ def login(request):
         email_log = request.POST.get('email')
         validacao = request.POST.get('senha')
         user = Cadastro.objects.filter(email=email_log, senha=validacao).first()
-        if user is True:
+        if user is not None:
             print('verdadeiro')
-            context = {'mensag': 'Olá'}
-            return render(request, 'console.html', user, context)
+            context = {'user': user}
+            return render(request, 'console.html', context)
         else:
             print('errou')
             context = {'mensag': 'e-mail ou senha incorretos :('}

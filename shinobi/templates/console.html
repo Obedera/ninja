@@ -3,6 +3,8 @@
 
 
 {%block conteudo%}
+{% if user is not None %}
+
     {% load static %}
     <script src="{% static 'js/debug.js' %}" defer></script>
 <nav>
@@ -11,7 +13,6 @@
 <p></p>
 
 </nav>
-{% if user is True %}
 
 <label for="story">Digite seu Codigo aqui:</label>
 
