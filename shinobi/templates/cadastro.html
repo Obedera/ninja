@@ -1,7 +1,7 @@
 <!-- Pagina para Login/Cadastro e talvez outras informaçoes  -->
 {%extends 'shared/layout.html'%}
 {%block conteudo%}
-<h6>Cadastro</h6>
+<h2>Cadastro</h2>
 <form action="/" method="POST">
     {% csrf_token %}
     {{msg}}
@@ -29,7 +29,19 @@
 
     <input type="submit" value="Cadastrar">
 </form>
+<form action="login" method="POST">
+    {% csrf_token %}
+    <h3>Login</h3>
 
+    {{mensag}}
+    <label>E-mail</label>
+    <input type="email" name="email" required>
+
+    <label>Senha</label>
+    <input type="password" name="senha" required>
+
+    <input type="submit" value="login">
+</form>
 <div class="cadastro">
     <div><img class="shinobi" src="/static/img/shinobi.png" alt=""></div>
 

@@ -28,14 +28,16 @@ def index(request):
 def login(request):
     if request.method == 'POST':
         email_log = request.POST.get('email')
-        s = request.POST.get('senha')
-        user = Cadastro.objects.filter(email=email_log).first()
-        s = user.objects.filter(senha=s)
-        if user == s:
+        validacao = request.POST.get('senha')
+        user = Cadastro.objects.filter(email=email_log, senha=validacao).first()
+        if user is not None:
+            print('ops veio aq')
             return render(request, 'console.html')
         else:
+            print('errouuu')
             context = {'mensag': 'e-mail ou senha incorretos :('}
             return render(request, 'cadastro.html', context)
+    return render(request, 'cadastro.html')
 
 def console(request):
     if request.method == 'POST':
