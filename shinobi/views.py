@@ -21,9 +21,21 @@ def index(request):
             context = {'msg': 'usuário cadastrado, faça login'}
             return render(request, 'cadastro.html', context)
         else:
-            context = {'msg': 'as senhas não estão iguais'}
+            context = {'msg': 'as senhas não correspondem'}
             return render(request, 'cadastro.html', context)
     return render(request, 'cadastro.html')
+
+def login(request):
+    if request.method == 'POST':
+        email_log = request.POST.get('email')
+        s = request.POST.get('senha')
+        user = Cadastro.objects.filter(email=email_log).first()
+        s = user.objects.filter(senha=s)
+        if user == s:
+            return render(request, 'console.html')
+        else:
+            context = {'mensag': 'e-mail ou senha incorretos :('}
+            return render(request, 'cadastro.html', context)
 
 def console(request):
     if request.method == 'POST':
