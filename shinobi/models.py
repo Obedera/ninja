@@ -16,7 +16,7 @@ class Cadastro(models.Model):
         verbose_name = 'Nome',
     )
 
-    Sobrenome = models.CharField(
+    sobrenome = models.CharField(
         max_length = 255,
         verbose_name = 'Sobrenome',
     )
