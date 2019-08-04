@@ -5,6 +5,12 @@ from django.db import models
 #vai cadastrar uma pessoa
 class Cadastro(models.Model):
 
+    GENEROS = (
+        ('MA', 'Masculino'),
+        ('FE', 'Feminino'),
+        ('OU', 'Outros'),
+    )
+    
     nome = models.CharField(
         max_length = 255,
         verbose_name = 'Nome',
@@ -13,6 +19,13 @@ class Cadastro(models.Model):
     Sobrenome = models.CharField(
         max_length = 255,
         verbose_name = 'Sobrenome',
+    )
+
+    genero = models.CharField(
+        max_length = 25,
+        verbose_name = 'Gênero',
+        choices=GENEROS,
+        default=""
     )
 
     email = models.EmailField(
@@ -32,4 +45,3 @@ class Cadastro(models.Model):
 
     criacao = models.DateTimeField(auto_now=True)
     ativado = models.BooleanField(default=True)
-    
