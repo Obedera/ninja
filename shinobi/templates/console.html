@@ -19,7 +19,11 @@
 <form action="/console" method="POST">
     {% csrf_token %}
     <label for="story">Digite seu Codigo aqui:</label>
-    
+    <select name="linguagem">
+        <option value="H">HTML</option>
+        <option value="J">Javascript</option>
+        <option value="C">CSS</option>
+    </select>
     <textarea name="debugtexto"
               rows="5" cols="33">
     

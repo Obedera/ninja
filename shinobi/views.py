@@ -43,10 +43,18 @@ def login(request):
 
 def console(request):
     if request.method == 'POST':
-        texto_convertido = json.loads(request.POST.get('json')) 
-        html = analizar_html(texto_convertido['texto'])
-        print(html)
-        return JsonResponse({'texto':html}, status=200)
+        texto_convertido = json.loads(request.POST.get('json'))
+        if texto_convertido['linguagem'] == 'H':
+            erros = analizar_html(texto_convertido['texto'])
+            
+        if texto_convertido['linguagem'] == 'J':
+            erros = analizar_js(texto_convertido['texto'])
+    
+        if texto_convertido['linguagem'] == 'C':
+            erros = analizar_css(texto_convertido['texto'])
+        
+
+        return JsonResponse({'texto':erros}, status=200)
 
 
     return render(request, 'console.html',{})
