@@ -21,8 +21,7 @@ body{
 .shinobi{
     width: auto;
     height: 150px;
-    border-radius: 100%;
-   
+    margin-bottom: 10px;
 }
 
 .cadastro p, button{
