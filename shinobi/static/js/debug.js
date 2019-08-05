@@ -12,13 +12,16 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-
-let form = document.querySelector('#debug');
-form.onsubmit = e => {
-    e.preventDefault();
-    grabFormData();
-};
-function grabFormData(){
+function debug(){
+    let form = document.querySelector('#debug');
+    
+    form.onsubmit = e => {
+        e.preventDefault();
+    };
+    grabFormDataDebug();
+    
+}
+function grabFormDataDebug(){
     let areatexto = document.querySelector('textarea[name="debugtexto"]').value;
     let opcao = document.querySelector('select').value;
     if (areatexto == 'html:5'){
@@ -31,14 +34,14 @@ function grabFormData(){
         };
         let data = new FormData();
         data.append( "json", JSON.stringify( debug ) );
-        return submitForm(data);
+        return submitFormDebug(data);
     }
 }
 
 
 
 
-function submitForm(data){
+function submitFormDebug(data){
     let csrftoken = getCookie('csrftoken');
     fetch("/console",
     {

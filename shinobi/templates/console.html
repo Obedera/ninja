@@ -28,7 +28,7 @@
     </select>
     <textarea name="debugtexto" rows="5" cols="33" placeholder="Digite html:5 para montar a estrutura"></textarea>
     {{msg}}
-    <input type="submit" value="Testar">
+    <button onclick="debug()">Testar</button>
 </form>
     <textarea id="debug_resposta" rows="5" cols="33"></textarea>
 
@@ -38,7 +38,7 @@
         <label for="story">Digite sua pergunta aqui:</label>
         <textarea id="conversa" rows="5" cols="33">Bot: Olá posso te ajudar?</textarea>
         <input type="text" name="userResposta">
-        <input type="submit" value="Enviar">
+        <button onclick="chatBot()">Enviar</button>
     </form>
 
 {% else %}

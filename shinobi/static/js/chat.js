@@ -12,13 +12,14 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-
-let chatBot = document.querySelector('#chatBot');
-chatBot.onsubmit = e => {
-    e.preventDefault();
-    grabFormData();
-};
-function grabFormData(){
+function chatBot(){
+    let chatBot = document.querySelector('#chatBot');
+    chatBot.onsubmit = e => {
+        e.preventDefault();
+    };
+    grabFormDataChat();
+}
+function grabFormDataChat(){
     let userResposta = document.querySelector('input[name="userResposta"]').value;
     document.querySelector('#conversa').value += '\nUser: '+userResposta;
     let debug = {
@@ -26,13 +27,13 @@ function grabFormData(){
     };
     let data = new FormData();
     data.append( "json", JSON.stringify( debug ) );
-    return submitForm(data);
+    return submitFormChat(data);
 }
 
 
 
 
-function submitForm(data){
+function submitFormChat(data){
     let csrftoken = getCookie('csrftoken');
     fetch("/chat",
     {
