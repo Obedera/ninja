@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.index),
     path('login', views.login),
     path('console', views.console),
+    path('chat', views.chat)
 ]

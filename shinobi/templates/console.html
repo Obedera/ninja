@@ -7,6 +7,8 @@
 
     {% load static %}
     <script src="{% static 'js/debug.js' %}" defer></script>
+    <script src="{% static 'js/chat.js' %}" defer></script>
+
 <nav>
 <p>{{user.nome}}</p>
 <p></p>
@@ -16,7 +18,7 @@
 
 <label for="story">Digite seu Codigo aqui:</label>
 
-<form action="/console" method="POST">
+<form action="/console" id="debug" method="POST">
     {% csrf_token %}
     <label for="story">Digite seu Codigo aqui:</label>
     <select name="linguagem">
@@ -29,6 +31,16 @@
     <input type="submit" value="Testar">
 </form>
     <textarea id="debug_resposta" rows="5" cols="33"></textarea>
+
+
+    <form action="/chat" id="chatBot" method="POST">
+        {% csrf_token %}
+        <label for="story">Digite sua pergunta aqui:</label>
+        <textarea id="conversa" rows="5" cols="33"></textarea>
+        <input type="text" name="userResposta">
+        <input type="submit" value="Enviar">
+    </form>
+
 {% else %}
 
 <h1>Poxa cara, cê precisa se cadastrar para usar o debugador </h1>

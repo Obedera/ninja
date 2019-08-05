@@ -13,7 +13,7 @@ function getCookie(name) {
     return cookieValue;
 }
 
-let form = document.querySelector('form');
+let form = document.querySelector('#debug');
 form.onsubmit = e => {
     e.preventDefault();
     grabFormData();

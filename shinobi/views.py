@@ -67,3 +67,13 @@ def console(request):
 
 
     return render(request, 'console.html',{})
+
+
+        
+def chat(request):
+    if request.method == 'POST':
+        texto_convertido = json.loads(request.POST.get('json'))
+        print(texto_convertido['texto'])
+        resposta = 'mmmm'
+        return JsonResponse({'texto':resposta}, status=200)
+    return render(request, 'console.html',{})
