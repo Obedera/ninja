@@ -36,7 +36,7 @@
     <form action="/chat" id="chatBot" method="POST">
         {% csrf_token %}
         <label for="story">Digite sua pergunta aqui:</label>
-        <textarea id="conversa" rows="5" cols="33"></textarea>
+        <textarea id="conversa" rows="5" cols="33">Bot: Olá posso te ajudar?</textarea>
         <input type="text" name="userResposta">
         <input type="submit" value="Enviar">
     </form>

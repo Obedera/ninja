@@ -20,7 +20,7 @@ chatBot.onsubmit = e => {
 };
 function grabFormData(){
     let userResposta = document.querySelector('input[name="userResposta"]').value;
-    console.log(userResposta);
+    document.querySelector('#conversa').value += '\nUser: '+userResposta;
     let debug = {
       texto: userResposta
     };
@@ -46,6 +46,6 @@ function submitForm(data){
     .then(function(data){
        let respostaBot_json = JSON.stringify( data )
        let respostaBot = JSON.parse(respostaBot_json)
-       document.querySelector('#conversa').value += respostaBot.texto;
+       document.querySelector('#conversa').value += '\nBot: '+respostaBot.texto;
     })
 }
