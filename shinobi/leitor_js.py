@@ -1,5 +1,7 @@
 def analizar_js(js):
     texto_js = js
+    if texto_js == '':
+        return 'Digite alguma coisa'
     linha_js = texto_js.splitlines()
     Erros = ''
 
@@ -52,12 +54,17 @@ def analizar_js(js):
             if j[:3] == 'ale':
                 if j[3:6] != 'rt(':
                     erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
-                if j.count(';') == 0:
-                    erros += f'Não se esqueça de colocar o ";"\n'
-
+                
+            if j[:3] == 'pro':
+                if j[3:7] != 'mpt(':
+                    erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
+                
             contador += 1
         return erros
 
     Erros += checar_erros_palavra(lista_palavras)
 
+    if Erros == '':
+        return 'Não detectei nenhum erro'
+        
     return Erros

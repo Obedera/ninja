@@ -1,5 +1,7 @@
 def analizar_html(html):
     texto_html = html
+    if texto_html == '':
+        return 'Digite alguma coisa'
     linha_html = texto_html.splitlines()
     Erros = ''
 
@@ -80,6 +82,8 @@ def analizar_html(html):
 
     Erros += itens_necessarios()
     Erros += checar_erros_palavra(lista_palavras)
+    if Erros == '':
+        return 'Não detectei nenhum erro'
 
     return Erros
     

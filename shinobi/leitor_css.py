@@ -1,5 +1,7 @@
 def analizar_css(css):
     texto_css = css
+    if texto_css == '':
+        return 'Digite alguma coisa'
     linha_css = texto_css.splitlines()
     Erros = ''
 
@@ -33,5 +35,8 @@ def analizar_css(css):
         Erros += 'Você esqueceu de colocar "}"\n'
     if lista_letras.count('{') < lista_letras.count('}'):
         Erros += 'Você esqueceu de colocar "{"\n'
-
+    
+    if Erros == '':
+        return 'Não detectei nenhum erro'
+        
     return Erros
