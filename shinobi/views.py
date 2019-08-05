@@ -5,6 +5,7 @@ from shinobi.models import Cadastro
 from shinobi.leitor_html import analizar_html
 from shinobi.leitor_js import analizar_js
 from shinobi.leitor_css import analizar_css
+from shinobi.chat import analizar_resposta
 
 
 # Create your views here.
@@ -73,7 +74,6 @@ def console(request):
 def chat(request):
     if request.method == 'POST':
         texto_convertido = json.loads(request.POST.get('json'))
-        print(texto_convertido['texto'])
-        resposta = 'mmmm'
+        resposta = analizar_resposta(texto_convertido['texto'])
         return JsonResponse({'texto':resposta}, status=200)
     return render(request, 'console.html',{})
