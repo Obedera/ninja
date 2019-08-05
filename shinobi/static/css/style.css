@@ -1,4 +1,5 @@
 body{
+    cursor: url('/static/img/kunai.cur'), auto;
     width: 100vw;
     background-color: #212026;
     display: flex;
