@@ -1,5 +1,5 @@
 def analizar_resposta(resposta):
-    div = ['como abre uma div', 'como abrir uma div', 'abrir div',]
+    div = ['como abre uma div', 'como abrir uma div', 'abrir div','como se abre uma div', 'como abrir div']
     afirmacoes = ['Bom dia','bom dia', 'boa noite', 'Boa noite']
     mente = ['', afirmacoes, div]
     texto_resposta = resposta
@@ -10,5 +10,10 @@ def analizar_resposta(resposta):
     if texto_resposta == '':
         return 'Digite alguma coisa'
     
+    if mente[1].count(texto_resposta)==1:
+        return 'Obrigado'
+    if mente[2].count(texto_resposta)==1:
+        return 'Se abre uma div assim "<div>" e se fecha assim "</div>"'
+    
         
-    return 'Olá'
+    return 'Algo errado não está certo'
