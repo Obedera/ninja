@@ -49,7 +49,9 @@ function submitForm(data){
     .then(function(res){ 
         return res.json(); 
     })
-    .then(function(data){ 
-       document.querySelector('#debug_resposta').value = JSON.stringify( data )  
+    .then(function(data){
+       let erros_json = JSON.stringify( data )
+       let erros = JSON.parse(erros_json)
+       document.querySelector('#debug_resposta').value = erros.texto;
     })
 }
