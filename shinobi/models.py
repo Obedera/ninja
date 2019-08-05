@@ -28,7 +28,8 @@ class Cadastro(models.Model):
 
     email = models.EmailField(
         max_length = 255,
-        verbose_name = 'E-mail'
+        verbose_name = 'E-mail',
+        unique=True
     )
     
     senha = models.CharField(

@@ -10,21 +10,30 @@ from shinobi.leitor_css import analizar_css
 # Create your views here.
 
 def index(request):
+    context = {}
     if request.method == 'POST':
-        if request.POST.get('senha') == request.POST.get('confirmar_senha'):
-            usuario = Cadastro()
-            usuario.nome = request.POST.get('nome')
-            usuario.sobrenome = request.POST.get('sobrenome')
-            usuario.genero = request.POST.get('genero')
-            usuario.email = request.POST.get('email')
-            usuario.senha = request.POST.get('senha')
-            usuario.save()
-            context = {'msg': 'usuário cadastrado, faça login'}
+        email_user = request.POST.get('email')
+        pessoa_bd = Cadastro.objects.filter(email=email_user)
+        
+        if str(pessoa_bd) != '<QuerySet []>':
+            context = {'msg':'Email já cadastrado'}
             return render(request, 'cadastro.html', context)
         else:
-            context = {'msg': 'as senhas não correspondem'}
-            return render(request, 'cadastro.html', context)
-    return render(request, 'cadastro.html')
+            if request.POST.get('senha') != request.POST.get('confirmar_senha'):
+                context = {'msg': 'As senhas não correspondem'}
+                return render(request, 'cadastro.html', context)
+            else:
+                usuario = Cadastro()
+                usuario.nome = request.POST.get('nome')
+                usuario.sobrenome = request.POST.get('sobrenome')
+                usuario.genero = request.POST.get('genero')
+                usuario.email = request.POST.get('email')
+                usuario.senha = request.POST.get('senha')
+                usuario.save()
+                context = {'msg': 'usuário cadastrado, faça login'}
+                return render(request, 'cadastro.html', context)
+
+    return render(request, 'cadastro.html', context)
 
 def login(request):
     if request.method == 'POST':
