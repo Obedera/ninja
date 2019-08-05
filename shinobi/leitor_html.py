@@ -60,6 +60,8 @@ def analizar_html(html):
 
     def checar_erros_palavra(lista_palavras):
         contador = 0
+        divs_abertas = 0
+        divs_fechadas = 0
         erros = ''
         while contador<len(lista_palavras):
             if lista_palavras[contador] == '<':
@@ -68,7 +70,7 @@ def analizar_html(html):
             if lista_palavras[contador][0:7] == 'class="':
                 letras = quebrar_por_letra(lista_palavras[contador])
                 if letras.count('.') == 1:
-                    erros += f'Tem erro na linha {contador+1} tire o "." da classe'
+                    erros += f'Tem erro na linha {contador+1} tire o "." da classe\n'
 
             if lista_palavras[contador] == '<bodyy>' or lista_palavras[contador] == '<bodyy':
                 erros += f'Tem erro na linha {contador+1} o "{lista_palavras[contador]}" está escrito errado\n'
@@ -76,7 +78,15 @@ def analizar_html(html):
             if lista_palavras[contador] == '<scripts':
                 erros += f'Tem erro na linha {contador+1} o "{lista_palavras[contador]}" está escrito errado\n'
             
+            if lista_palavras[contador][0:4] == '<div':
+                divs_abertas += 1
+            if lista_palavras[contador][len(lista_palavras[contador])-6:] == '</div>':
+                divs_fechadas += 1
+
             contador += 1
+
+        if divs_fechadas != divs_abertas:
+            erros += f'<div> precisa ser fechada ex: </div>\n'
 
         return erros
 
