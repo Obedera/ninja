@@ -1,11 +1,10 @@
 def analizar_resposta(resposta):
     import random
-
+    
     links_ajuda = '\nAlguns links de ajuda:\nhttps://www.w3schools.com/\nhttps://stackoverflow.com/\nhttps://www.devmedia.com.br/'
-
-
-    div = ['como abre uma div', 'como abrir uma div', 'abrir div','o que são divs','como se abre uma div', 'como abrir div','pra oq serve uma div', 'o que é uma div', 'div', 'oq é div', 'oq é uma div', 'O que é uma div class?']
-
+    
+    oque = ['oq','são', 'pra', 'que', 'serve', 'pq']
+    
     afirmacoes = ['bom dia', 'boa noite', 'boa tarde','te amo', 'seu lindo', 'amor']
 
     conte_piada = ['conte uma piada', 'piada', 'conte piada', 'piadas', 'conte umas piadas', 'diga alguma piada','fale uma piada','diga piada','diga uma piada da mastertech']
@@ -15,21 +14,34 @@ def analizar_resposta(resposta):
     piadas_Groger = ['Imagina pensar como um humano normal, igual esses que você vê na rua','Porque a vaca na argentina fica olhando pra cima? Porque é Bois-Nos-Ares','O madara morreu agora é o obede obito','No back tem varios backs','Oq importa é oq importa','sgbd não é rgbd jo soy rebelde','cara esse cara é o cara','Nas-Views, aviões. barcos','a diferença entre lt e gt é que lt tem l e gt tem g e não é g de dragon ball','Pra esse erro é só lê','Só o python é pai','Obede você é ruim porque você é o bad','Chega na sua casa e fala path']
     piadas = [piadas_Renan,piadas_Joao,piadas_Groger]
 
-    mente = ['', afirmacoes, div,conte_piada]
+    mente = [afirmacoes,conte_piada,oque]
     texto_resposta = resposta.lower()
-    
-    if mente[1].count(texto_resposta)==0 and mente[0].count(texto_resposta) == 0 and mente[2].count(texto_resposta) == 0 and mente[3].count(texto_resposta)==0:
+    resposta_palavras = texto_resposta.split()
+    contador = 0
+    contador_afirmacoes = 0
+    contador_piada = 0
+    contador_oque = 0
+
+    for i in resposta_palavras:
+        if mente[0].count(i) != 0 or mente[0].count(texto_resposta) != 0:
+            contador +=1
+            contador_afirmacoes += 1
+        if mente[1].count(i) != 0 or mente[1].count(texto_resposta) != 0:
+            contador +=1
+            contador_piada += 1
+        if mente[2].count(i) != 0 or mente[2].count(texto_resposta) != 0:
+            contador +=1
+            contador_oque += 1
         
+    if contador == 0:
         return str('Não sei mas isso pode te ajudar:\nhttps://pt.lmgtfy.com/?q='+texto_resposta)
-    
+
     if texto_resposta == '':
         return 'Digite alguma coisa'
     
-    if mente[1].count(texto_resposta)!=0:
+    if contador_afirmacoes != 0:
         return 'Obrigado'
-    if mente[2].count(texto_resposta)!=0:
-        return 'Se abre uma div assim "<div>" e se fecha assim "</div>"'
-    if mente[3].count(texto_resposta)!=0:
+    if contador_piada != 0:
         autor = random.randint(0,(len(piadas)-1))
         print(autor)
         if autor == 0:
@@ -41,6 +53,11 @@ def analizar_resposta(resposta):
         if autor == 2:
             piada_selecionada = piadas[autor][random.randint(0,len(piadas[autor])-1)]
             return str('Autor Groger: '+piada_selecionada)
+    
+    if contador_oque != 0 and resposta_palavras.count('div') != 0:
+        return str('A tag <div> define uma divisão ou uma seção em um documento HTML. É usada geralmente para fazer blocos de elementos, dispondo organizadamente as informações dentro do layout, que são formatadas com CSS. A tag <div> é controlada pela CSS através de um ID, Class ou pela própria tag.'+links_ajuda)
+    if contador_oque != 0 and resposta_palavras.count('css') != 0:
+        return str('O Cascading Style Sheets (CSS) é uma "folha de estilo" composta por “camadas” e utilizada para definir a apresentação (aparência) em páginas da internet que adotam para o seu desenvolvimento linguagens de marcação (como XML, HTML e XHTML).'+links_ajuda)
     
         
     return 'Algo errado não está certo'
