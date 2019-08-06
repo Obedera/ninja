@@ -17,33 +17,24 @@ def analizar_resposta(resposta):
     mente = [afirmacoes,conte_piada,oque]
     texto_resposta = resposta.lower()
     resposta_palavras = texto_resposta.split()
-    contador = 0
-    contador_afirmacoes = 0
-    contador_piada = 0
-    contador_oque = 0
+    contador = []
+    
 
     for i in resposta_palavras:
         if mente[0].count(i) != 0 or mente[0].count(texto_resposta) != 0:
-            contador +=1
-            contador_afirmacoes += 1
+            contador.append('afirmacao')
         if mente[1].count(i) != 0 or mente[1].count(texto_resposta) != 0:
-            contador +=1
-            contador_piada += 1
+            contador.append('piada')
         if mente[2].count(i) != 0 or mente[2].count(texto_resposta) != 0:
-            contador +=1
-            contador_oque += 1
+            contador.append('oque')
         
-    if contador == 0:
-        return str('Não sei mas isso pode te ajudar:\nhttps://pt.lmgtfy.com/?q='+texto_resposta)
-
     if texto_resposta == '':
         return 'Digite alguma coisa'
     
-    if contador_afirmacoes != 0:
+    if contador.count('afirmacao')!= 0:
         return 'Obrigado'
-    if contador_piada != 0:
+    if contador.count('piada') != 0:
         autor = random.randint(0,(len(piadas)-1))
-        print(autor)
         if autor == 0:
             piada_selecionada = piadas[autor][random.randint(0,len(piadas[autor])-1)]
             return str('Autor Renan: '+piada_selecionada)
@@ -54,10 +45,10 @@ def analizar_resposta(resposta):
             piada_selecionada = piadas[autor][random.randint(0,len(piadas[autor])-1)]
             return str('Autor Groger: '+piada_selecionada)
     
-    if contador_oque != 0 and resposta_palavras.count('div') != 0:
+    if contador.count('oque') != 0 and resposta_palavras.count('div') != 0:
         return str('A tag <div> define uma divisão ou uma seção em um documento HTML. É usada geralmente para fazer blocos de elementos, dispondo organizadamente as informações dentro do layout, que são formatadas com CSS. A tag <div> é controlada pela CSS através de um ID, Class ou pela própria tag.'+links_ajuda)
-    if contador_oque != 0 and resposta_palavras.count('css') != 0:
+    if contador.count('oque') != 0 and resposta_palavras.count('css') != 0:
         return str('O Cascading Style Sheets (CSS) é uma "folha de estilo" composta por “camadas” e utilizada para definir a apresentação (aparência) em páginas da internet que adotam para o seu desenvolvimento linguagens de marcação (como XML, HTML e XHTML).'+links_ajuda)
     
         
-    return 'Algo errado não está certo'
+    return str('Não sei mas isso pode te ajudar:\nhttps://pt.lmgtfy.com/?q='+texto_resposta)
