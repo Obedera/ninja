@@ -3,6 +3,7 @@ def analizar_resposta(resposta):
     
     links_ajuda = '\nAlguns links de ajuda:\nhttps://www.w3schools.com/\nhttps://stackoverflow.com/\nhttps://www.devmedia.com.br/'
     
+    
     oque = ['oq','são', 'pra', 'que', 'serve', 'pq']
     
     afirmacoes = ['bom dia', 'boa noite', 'boa tarde','te amo', 'seu lindo', 'amor']
@@ -18,6 +19,7 @@ def analizar_resposta(resposta):
     texto_resposta = resposta.lower()
     resposta_palavras = texto_resposta.split()
     contador = []
+    sem_resposta = str('Não sei mas isso pode te ajudar:\nhttps://pt.lmgtfy.com/?q='+texto_resposta+'\nhttps://stackoverflow.com/search?q='+texto_resposta)
     
 
     for i in resposta_palavras:
@@ -49,6 +51,10 @@ def analizar_resposta(resposta):
         return str('A tag <div> define uma divisão ou uma seção em um documento HTML. É usada geralmente para fazer blocos de elementos, dispondo organizadamente as informações dentro do layout, que são formatadas com CSS. A tag <div> é controlada pela CSS através de um ID, Class ou pela própria tag.'+links_ajuda)
     if contador.count('oque') != 0 and resposta_palavras.count('css') != 0:
         return str('O Cascading Style Sheets (CSS) é uma "folha de estilo" composta por “camadas” e utilizada para definir a apresentação (aparência) em páginas da internet que adotam para o seu desenvolvimento linguagens de marcação (como XML, HTML e XHTML).'+links_ajuda)
+    if contador.count('oque') != 0 and resposta_palavras.count('html') != 0:
+        return str('HTML é uma das linguagens que utilizamos para desenvolver websites. O acrônimo HTML vem do inglês e significa Hypertext Markup Language ou em português Linguagem de Marcação de Hipertexto.'+links_ajuda)
+    if contador.count('oque') != 0 and (resposta_palavras.count('js') != 0 or resposta_palavras.count('javascript') != 0):
+        return str('JavaScript, frequentemente abreviado como JS, é uma linguagem de programação interpretada de alto nível, caracterizada também, como dinâmica, fracamente tipificada, prototype-based e multi-paradigma. Juntamente com HTML e CSS, o JavaScript é uma das três principais tecnologias da World Wide Web.'+links_ajuda)
     
         
-    return str('Não sei mas isso pode te ajudar:\nhttps://pt.lmgtfy.com/?q='+texto_resposta)
+    return sem_resposta
