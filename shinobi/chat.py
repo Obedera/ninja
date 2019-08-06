@@ -1,8 +1,12 @@
 def analizar_resposta(resposta):
     import random
-    div = ['como abre uma div', 'como abrir uma div', 'abrir div','como se abre uma div', 'como abrir div']
 
-    afirmacoes = ['Bom dia','bom dia', 'boa noite', 'Boa noite']
+    links_ajuda = '\nAlguns links de ajuda:\nhttps://www.w3schools.com/\nhttps://stackoverflow.com/\nhttps://www.devmedia.com.br/'
+
+
+    div = ['como abre uma div', 'como abrir uma div', 'abrir div','o que são divs','como se abre uma div', 'como abrir div','pra oq serve uma div', 'o que é uma div', 'div', 'oq é div', 'oq é uma div', 'O que é uma div class?']
+
+    afirmacoes = ['bom dia', 'boa noite', 'boa tarde','te amo', 'seu lindo', 'amor']
 
     conte_piada = ['conte uma piada', 'piada', 'conte piada', 'piadas', 'conte umas piadas', 'diga alguma piada','fale uma piada','diga piada','diga uma piada da mastertech']
 
@@ -12,7 +16,8 @@ def analizar_resposta(resposta):
     piadas = [piadas_Renan,piadas_Joao,piadas_Groger]
 
     mente = ['', afirmacoes, div,conte_piada]
-    texto_resposta = resposta
+    texto_resposta = resposta.lower()
+    
     if mente[1].count(texto_resposta)==0 and mente[0].count(texto_resposta) == 0 and mente[2].count(texto_resposta) == 0 and mente[3].count(texto_resposta)==0:
         
         return str('Não sei mas isso pode te ajudar:\nhttps://pt.lmgtfy.com/?q='+texto_resposta)
@@ -20,11 +25,11 @@ def analizar_resposta(resposta):
     if texto_resposta == '':
         return 'Digite alguma coisa'
     
-    if mente[1].count(texto_resposta)==1:
+    if mente[1].count(texto_resposta)!=0:
         return 'Obrigado'
-    if mente[2].count(texto_resposta)==1:
+    if mente[2].count(texto_resposta)!=0:
         return 'Se abre uma div assim "<div>" e se fecha assim "</div>"'
-    if mente[3].count(texto_resposta)==1:
+    if mente[3].count(texto_resposta)!=0:
         autor = random.randint(0,(len(piadas)-1))
         print(autor)
         if autor == 0:
