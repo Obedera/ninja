@@ -57,6 +57,63 @@ label {
     margin-bottom: 10px;
 }
 
+/* PARA O CHAT*/
+
+.chat{
+    align-items: center;
+    bottom: 3px;
+    border-radius: 8px 8px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: end;
+    position: fixed;
+    right: 10vw;
+    width: 20vw;
+}
+.invisivel{
+    display: none;
+}
+.chat button{
+    background-color: dimgray;
+    cursor: pointer;
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px 8px 8px 8px;
+    width: 100%;
+    
+}
+.chat textarea{
+    height: 43vh;
+    width: 20vw;
+    border: 1px solid black;
+    border-radius: 8px 8px 8px 8px;
+}
+.chat div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.chat div input{
+    border: 1px solid black;
+    border-radius: 8px 8px 8px 8px;
+    height: 5vh;
+    margin-right: 1vw;
+    width: 14vw;
+    
+}
+
+.chat div button{
+    border: 0;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    cursor: pointer;
+    background-color: green;
+    font-size: 16pt;
+    height: 4vh;
+    width: 5vw;
+}
+
 /* COLOCAR TUDO DO HTML CONSOLE NESSE ESPAÇO */
 
 /* RESERVADO PARA OUTROS HTML */

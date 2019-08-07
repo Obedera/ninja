@@ -33,14 +33,14 @@
     <textarea id="debug_resposta" rows="5" cols="33"></textarea>
 
 
-    <button onclick="exibirChat()">ChatBot</button>
     <aside class="chat">
+    <button onclick="exibirChat()">ChatBot</button>
     <form action="/chat" id="chatBot" method="POST">
         {% csrf_token %}
             <textarea id="conversa" rows="10" cols="30">Bot: Olá posso te ajudar?</textarea>
             <div>
                 <input type="text" name="userResposta">
-                <button onclick="chatBot()">Enviar</button>
+                <button onclick="chatBot()">></button>
             </div>
         </aside>
     </form>
