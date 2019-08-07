@@ -39,6 +39,11 @@ def analizar_js(js):
         Erros += 'Você esqueceu de colocar ")"\n'
     if lista_letras.count('(') < lista_letras.count(')'):
         Erros += 'Você esqueceu de colocar "("\n'
+    
+    if lista_letras.count('[') > lista_letras.count(']'):
+        Erros += 'Você esqueceu de colocar "]"\n'
+    if lista_letras.count('[') < lista_letras.count(']'):
+        Erros += 'Você esqueceu de colocar "["\n'    
 
     if (lista_letras.count('"')%2) != 0:
         Erros += 'Você esqueceu de colocar " \n'
@@ -57,6 +62,10 @@ def analizar_js(js):
                 
             if j[:3] == 'pro':
                 if j[3:7] != 'mpt(':
+                    erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
+
+            if j[:3] == 'fun':
+                if j[3:] != 'ction':
                     erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
                 
             contador += 1

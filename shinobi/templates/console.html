@@ -37,10 +37,10 @@
     <button onclick="exibirChat()">ChatBot</button>
     <form action="/chat" id="chatBot" method="POST">
         {% csrf_token %}
-            <textarea id="conversa" rows="10" cols="30">Bot: Olá posso te ajudar?</textarea>
+            <textarea id="conversa" class="invisivel" rows="10" cols="30" disabled="">Bot: Olá posso te ajudar?</textarea>
             <div>
-                <input type="text" name="userResposta">
-                <button onclick="chatBot()">></button>
+                <input type="text" class="invisivel" name="userResposta" placeholder="Digite aqui">
+                <button class="invisivel" onclick="chatBot()">></button>
             </div>
         </aside>
     </form>

@@ -62,10 +62,8 @@ def console(request):
     
         if texto_convertido['linguagem'] == 'C':
             erros = analizar_css(texto_convertido['texto'])
-        
 
         return JsonResponse({'texto':erros}, status=200)
-
 
     return render(request, 'console.html',{})
 

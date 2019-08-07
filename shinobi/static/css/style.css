@@ -88,6 +88,8 @@ label {
     width: 20vw;
     border: 1px solid black;
     border-radius: 8px 8px 8px 8px;
+    background-color: dimgray;
+    color: white;
 }
 .chat div{
     display: flex;
@@ -99,7 +101,9 @@ label {
     border-radius: 8px 8px 8px 8px;
     height: 5vh;
     margin-right: 1vw;
-    width: 14vw;
+    background-color: dimgray;
+    color: white;
+    width: 15vw;
     
 }
 
