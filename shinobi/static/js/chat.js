@@ -49,5 +49,6 @@ function submitFormChat(data){
        let respostaBot = JSON.parse(respostaBot_json)
        document.querySelector('#conversa').value += '\nBot: '+respostaBot.texto;
        document.querySelector('input[name="userResposta"]').value = '';
+       document.querySelector('#conversa').scrollTop = document.querySelector('#conversa').scrollHeight;
     })
 }
