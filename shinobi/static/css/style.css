@@ -1,21 +1,20 @@
 body{
     cursor: url('/static/img/kunai.cur'), auto;
-    background-color: #212026;
+    background-image: url('/static/img/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
 /* PARA HTML DO CADASTRO */
+
 .login{
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #595959;
-    border-radius: auto;
+    background-color: rgba(5, 9, 7, 0.3);
     width: 30vw;
     padding-bottom: 30px;
+    border-radius: 8px 8px 8px 8px;
 }
 .shinobi{
     width: auto;
