@@ -7,7 +7,7 @@ body{
     flex-direction: column;
 }
 /* PARA HTML DO CADASTRO */
-.cadastro {
+.login{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,6 @@ body{
     border-radius: auto;
     width: auto;
     width: 400px;
-    height: 455px;
 }
 .shinobi{
     width: auto;

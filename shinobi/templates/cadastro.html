@@ -1,54 +1,55 @@
 <!-- Pagina para Login/Cadastro e talvez outras informaçoes  -->
 {%extends 'shared/layout.html'%}
 {%block conteudo%}
-<h2>Cadastro</h2>
-<form action="/" method="POST">
-    {% csrf_token %}
-    {{msg}}
-    <label>Nome</label>
-    <input type="text" name="nome" required>
-
-    <label>Sobrenome</label>
-    <input type="text" name="sobrenome" required>
-
-    <label>Gênero</label>
-    <select name="genero" required>
-        <option value="MA">Masculino</option>
-        <option value="FE">Feminino</option>
-        <option value="OU">Outros</option>
-    </select>
-
-    <label>E-mail</label>
-    <input type="email" name="email" required>
-
-    <label>senha</label>
-    <input type="password" name="senha" required>
-
-    <label>Confirmar Senha</label>
-    <input type="password" name="confirmar_senha" required>
-
-    <input type="submit" value="Cadastrar">
-</form>
-<form action="/login" method="POST">
-    {% csrf_token %}
-    <h3>Login</h3>
-
-    {{mensag}}
-    <label>E-mail</label>
-    <input type="email" name="email" required>
-
-    <label>Senha</label>
-    <input type="password" name="senha" required>
-
-    <input type="submit" value="login">
-</form>
-<div class="cadastro">
+<section class="login">
     <div><img class="shinobi" src="/static/img/shinobi.svg" alt=""></div>
-
-<div><input type="text"><p> Digite seu Login </p></div>
-<div><input type="text" name="" id=""><p> Digite sua senha</p></div>
-<div><input type="text" name="" id=""><p> Digite seu e-mail</p></div>
-<input type="button" value="cadastrar">
+    <div id="login">
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            <h3>Login</h3>
+    
+            {{msg}}
+            <label>E-mail</label>
+            <input type="email" name="email" required>
+            
+            <label>Senha</label>
+            <input type="password" name="senha" required>
+            
+        <input type="submit" value="login">
+    </form>
+    <button onclick="mostrarCadastro()">Mostrar Cadastro</button>
 </div>
+<div id="cadastro" class="invisivel">
+    <form action="/" method="POST">
+        {% csrf_token %}
+        <h3>Cadastro</h3>
+        {{msg}}
+        <label>Nome</label>
+        <input type="text" name="nome" required>
+    
+        <label>Sobrenome</label>
+        <input type="text" name="sobrenome" required>
+    
+        <label>Gênero</label>
+        <select name="genero" required>
+            <option value="MA">Masculino</option>
+            <option value="FE">Feminino</option>
+            <option value="OU">Outros</option>
+        </select>
+    
+        <label>E-mail</label>
+        <input type="email" name="email" required>
+    
+        <label>senha</label>
+        <input type="password" name="senha" required>
+    
+        <label>Confirmar Senha</label>
+        <input type="password" name="confirmar_senha" required>
+    
+        <input type="submit" value="Cadastrar">
+    </form>
+    <button onclick="mostrarLogin()">Mostrar Login</button>
+</div>
+</section>
 
 {% endblock %}
