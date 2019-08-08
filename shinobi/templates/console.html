@@ -15,29 +15,29 @@
 <p></p>
 
 </nav>
-
-<label for="story">Digite seu Codigo aqui:</label>
-
-<form action="/console" id="debug" method="POST">
-    {% csrf_token %}
+<section class="debug">
     <label for="story">Digite seu Codigo aqui:</label>
-    <select name="linguagem">
-        <option value="H">HTML</option>
-        <option value="J">Javascript</option>
-        <option value="C">CSS</option>
-    </select>
-    <textarea name="debugtexto" rows="5" cols="33" placeholder="Digite html:5 para montar a estrutura"></textarea>
-    {{msg}}
-    <button onclick="debug()">Testar</button>
-</form>
-    <textarea id="debug_resposta" rows="5" cols="33"></textarea>
+    <form action="/console" id="debug" method="POST">
+        {% csrf_token %}
+        <button onclick="debug()">Testar</button>
+        <select name="linguagem">
+            <option value="H">HTML</option>
+            <option value="J">Javascript</option>
+            <option value="C">CSS</option>
+        </select>
+        <textarea name="debugtexto" rows="5" cols="33" placeholder="Digite html:5 para montar a estrutura"></textarea>
+        {{msg}}
+    </form>
+    <label for="story">Resposta</label>
+    <textarea id="debug_resposta" class="debugResposta" rows="5"  disabled cols="33"></textarea>
+</section>
 
 
     <aside class="chat">
         <button onclick="exibirChat()">ChatBot</button>
         <form action="/chat" id="chatBot" method="POST">
             {% csrf_token %}
-            <textarea id="conversa" class="invisivel" rows="10" cols="30" disabled="">Bot: Olá posso te ajudar?</textarea>
+            <textarea id="conversa" class="invisivel" rows="10" cols="30" disabled>Bot: Olá posso te ajudar?</textarea>
             <div>
                 <input type="text" class="invisivel" name="userResposta" placeholder="Digite aqui">
                 <button class="invisivel" onclick="chatBot()">></button>
