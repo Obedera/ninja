@@ -1,6 +1,5 @@
 body{
     cursor: url('/static/img/kunai.cur'), auto;
-    width: 100vw;
     background-color: #212026;
     display: flex;
     align-items: center;
@@ -65,7 +64,6 @@ label {
     border-radius: 8px 8px 8px 8px;
     display: flex;
     flex-direction: column;
-    height: 50vh;
     justify-content: end;
     position: fixed;
     right: 10vw;
@@ -89,6 +87,7 @@ label {
     border: 1px solid black;
     border-radius: 8px 8px 8px 8px;
     background-color: dimgray;
+    font-size: 12pt;
     color: white;
 }
 .chat div{
