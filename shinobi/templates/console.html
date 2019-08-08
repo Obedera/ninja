@@ -16,25 +16,27 @@
 
 </nav>
 <section class="debug">
-    <label for="story">Digite seu Codigo aqui:</label>
+    <h3>Digite seu Codigo aqui:</h3>
     <form action="/console" id="debug" method="POST">
         {% csrf_token %}
-        <button onclick="debug()">Testar</button>
-        <select name="linguagem">
-            <option value="H">HTML</option>
-            <option value="J">Javascript</option>
-            <option value="C">CSS</option>
-        </select>
+        <div>
+            <select name="linguagem">
+                <option value="H">HTML</option>
+                <option value="J">Javascript</option>
+                <option value="C">CSS</option>
+            </select>
+            <button onclick="debug()">Testar</button>
+        </div>
         <textarea name="debugtexto" rows="5" cols="33" placeholder="Digite html:5 para montar a estrutura"></textarea>
         {{msg}}
     </form>
-    <label for="story">Resposta</label>
+    <h3>Resposta</h3>
     <textarea id="debug_resposta" class="debugResposta" rows="5"  disabled cols="33"></textarea>
 </section>
 
 
     <aside class="chat">
-        <button onclick="exibirChat()">ChatBot</button>
+        <button onclick="exibirChat()">Bot</button>
         <form action="/chat" id="chatBot" method="POST">
             {% csrf_token %}
             <textarea id="conversa" class="invisivel" rows="10" cols="30" disabled>Bot: Olá posso te ajudar?</textarea>
