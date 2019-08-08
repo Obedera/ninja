@@ -52,9 +52,10 @@ textarea{
     border-radius: 5px;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
-    width: 450px;
-    height: 450px;
+    width: 40vw;
+    height: 50vh;
 }
+
 .debug form{
     display: flex;
     justify-content: center;
@@ -62,11 +63,24 @@ textarea{
     flex-direction: column;
 }
 
+.debug h3{
+    color: white;
+    text-align: center;
+}
+
+.debug div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 70%;
+}
+
 .debugResposta{
     background-color: white;
     color: black;
-    width: 450px;
-    height: 150px;
+    width: 40vw;
+    height: 20vh;
 }
 
 label {
@@ -84,7 +98,7 @@ label {
     flex-direction: column;
     justify-content: end;
     position: fixed;
-    right: 10vw;
+    right: 5vw;
     width: 20vw;
 }
 .invisivel{
@@ -95,8 +109,9 @@ label {
     cursor: pointer;
     color: white;
     border: 1px solid black;
-    border-radius: 8px 8px 8px 8px;
-    width: 100%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     
 }
 .chat textarea{
