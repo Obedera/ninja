@@ -3,7 +3,7 @@ body{
     cursor: url('/static/img/kunai.cur'), auto;
     background-image: url('/static/img/fundo.jpg');
     background-repeat: no-repeat;
-    background-size: 100vw 100vh;
+    background-size: 100vw;
     display: flex;
     color: white;
     font-family: 'Bungee', cursive;
@@ -15,7 +15,6 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.300);
-    height: 100vh;
     width: 100vw;
 /*    border-radius: 8px 8px 8px 8px;*/
 }

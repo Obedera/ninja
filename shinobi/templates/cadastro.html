@@ -2,11 +2,12 @@
 {%extends 'shared/layout.html'%}
 {%block conteudo%}
 <section class="login">
+    <div><img class="shinobi" src="/static/img/shinobi.svg" alt=""></div>
     <div id="login">
-        <form action="/login" method="POST" class="flogin">
+        <form action="/login" method="POST">
             {% csrf_token %}
             <h3>Login</h3>
-            
+    
             {{msg}}
             <label>E-mail</label>
             <input type="email" name="email" required>
@@ -14,11 +15,10 @@
             <label>Senha</label>
             <input type="password" name="senha" required>
             
-            <input type="submit" value="login">
-        </form>
-        <button onclick="mostrarCadastro()">Mostrar Cadastro</button>
-    </div>
-<div><img class="shinobi" src="/static/img/shinobi.svg" alt=""></div>
+        <input type="submit" value="login">
+    </form>
+    <button onclick="mostrarCadastro()">Mostrar Cadastro</button>
+</div>
 <div id="cadastro" class="invisivel">
     <form action="/" method="POST">
         {% csrf_token %}
