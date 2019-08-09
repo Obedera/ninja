@@ -1,4 +1,3 @@
-alert('ok')
 function exibirChat(){
     document.querySelector('.chat textarea').classList.toggle('invisivel');
     document.querySelector('.chat div input').classList.toggle('invisivel');

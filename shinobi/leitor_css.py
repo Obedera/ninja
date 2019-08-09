@@ -29,7 +29,26 @@ def analizar_css(css):
 
     lista_letras = quebrar_por_letra(lista_palavras)
 
+    def pegar_selectors(texto):
+        lista = texto.split('{')
+        contador = 0
+        lista_selectors = []
+        lista_separada = []
+        while contador<len(lista):
+            lista_aux = lista[contador].split('}')
+            lista_separada.extend(lista_aux)
+            contador += 1
 
+        i = 0
+        while i<len(lista_separada):
+            lista_selectors.append(lista_separada[i])
+            i += 2 
+            
+        print(lista_selectors)
+        return lista_selectors
+ 
+    
+    lista_selectors = pegar_selectors(texto_css)
 
     if lista_letras.count('{') > lista_letras.count('}'):
         Erros += 'Você esqueceu de colocar "}"\n'
