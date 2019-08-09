@@ -17,6 +17,9 @@
 </nav>
 <section class="debug">
     <h3>Digite seu Codigo aqui:</h3>
+    <button onclick="aumentarFonteConsole()">+</button>
+    <button onclick="diminuirFonteConsole()">-</button>
+
     <form action="/console" id="debug" method="POST">
         {% csrf_token %}
         <div>
@@ -27,7 +30,7 @@
             </select>
             <button onclick="debug()">Testar</button>
         </div>
-        <textarea name="debugtexto" rows="5" cols="33" placeholder="Digite html:5 para montar a estrutura"></textarea>
+        <textarea name="debugtexto" rows="5" cols="33" style="font-size: 8pt;" placeholder="Digite html:5 para montar a estrutura"></textarea>
         {{msg}}
     </form>
     <h3>Resposta</h3>
