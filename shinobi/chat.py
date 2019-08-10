@@ -19,7 +19,7 @@ def analizar_resposta(resposta):
 
     olas = ['oi','ola','olá','eae','oh','hello','oie']
 
-    sim = ['sim','pode','s','yes','ss','ok']
+    sim = ['sim','pode','s','yes','ss','ok','bom']
 
     nao = ['não','nao','n']
 

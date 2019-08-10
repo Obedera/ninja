@@ -67,7 +67,6 @@ let  elementoPY = 0;
 let elemento;
 
 function segurarElemento(e) {
-    console.log(e);
     elemento = e.target;
     elementoPX = e.pageX - elemento.offsetLeft;
     elementoPY = e.pageY - elemento.offsetTop;

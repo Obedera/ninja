@@ -17,12 +17,12 @@
 </nav>
 <section class="debug">
     <h3>Digite seu Codigo aqui:</h3>
-    <button onclick="aumentarFonteConsole()">+</button>
-    <button onclick="diminuirFonteConsole()">-</button>
-
+    
     <form action="/console" id="debug" method="POST">
         {% csrf_token %}
         <nav>
+            <button onclick="aumentarFonteConsole()">+</button>
+            <button onclick="diminuirFonteConsole()">-</button>
             <select name="linguagem">
                 <option value="H">HTML</option>
                 <option value="J">Javascript</option>
@@ -41,7 +41,6 @@
 
 
     <aside class="chat">
-        <button onclick="exibirChat()">Bot</button>
         <form action="/chat" id="chatBot" method="POST">
             {% csrf_token %}
             <textarea id="conversa" class="invisivel" rows="10" cols="30" disabled>Bot: Olá posso te ajudar?</textarea>
@@ -50,6 +49,7 @@
                 <button class="invisivel" onclick="chatBot()">></button>
             </div>
         </form>
+        <button onclick="exibirChat()">Bot</button>
     </aside>
 
 {% else %}
