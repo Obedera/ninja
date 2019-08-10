@@ -3,7 +3,9 @@ body{
     cursor: url('/static/img/kunai.cur'), auto;
     background-image: url('/static/img/fundo.jpg');
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-position: fixed; */
     display: flex;
     color: white;
     font-family: 'Bungee', cursive;
