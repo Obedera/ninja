@@ -58,3 +58,32 @@ function submitFormDebug(data){
        document.querySelector('#debug_resposta').value = erros.texto;
     })
 }
+
+// Arrastar elementos
+
+let quadradoResposta = document.querySelector("#quadradoResposta");
+let  elementoPX = 0;
+let  elementoPY = 0;
+let elemento;
+
+function segurarElemento(e) {
+    console.log(e);
+    elemento = e.target;
+    elementoPX = e.pageX - elemento.offsetLeft;
+    elementoPY = e.pageY - elemento.offsetTop;
+
+    addEventListener("mousemove", moverElemento);
+    addEventListener("mouseup", soltarElemento);
+}
+    
+function moverElemento(e) {
+    elemento.style.left = (e.pageX - elementoPX) + 'px';
+    elemento.style.top = (e.pageY - elementoPY) + 'px';
+}
+    
+function soltarElemento() {
+    removeEventListener("mousemove", moverElemento);
+    removeEventListener("mouseup", soltarElemento);
+}
+
+quadradoResposta.addEventListener("mousedown",segurarElemento);

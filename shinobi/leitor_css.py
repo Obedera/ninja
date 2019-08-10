@@ -1,5 +1,5 @@
 def analizar_css(css):
-    texto_css = css
+    texto_css = css.replace('\n','')
     if texto_css == '':
         return 'Digite alguma coisa'
     linha_css = texto_css.splitlines()

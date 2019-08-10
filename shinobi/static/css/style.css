@@ -7,8 +7,24 @@ body{
     display: flex;
     color: white;
     font-family: 'Bungee', cursive;
-/* PARA HTML DO CADASTRO */
 }
+.arrastar{
+    background-color: dimgray;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 0;
+    position: absolute;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+/* PARA HTML DO CADASTRO */
 .login{
     display: flex;
     justify-content: center;
@@ -64,12 +80,8 @@ textarea{
 }
 
 
-.debug h3{
-    color: white;
-    text-align: center;
-}
 
-.debug div{
+.debug nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
