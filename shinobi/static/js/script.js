@@ -1,7 +1,20 @@
 function exibirChat(){
-    document.querySelector('.chat textarea').classList.toggle('invisivel');
-    document.querySelector('.chat div input').classList.toggle('invisivel');
-    document.querySelector('.chat div button').classList.toggle('invisivel');   
+    if (document.querySelector('.chat form').style.opacity == 0){
+        document.querySelector('.chat form').classList.toggle('invisivel');
+        setTimeout(function(){
+            document.querySelector('.chat form').style.opacity =1;
+        }, 10);
+    }
+    else{
+        document.querySelector('.chat form').style.opacity = 0;
+        setTimeout(function(){
+            document.querySelector('.chat form').classList.toggle('invisivel');
+        }, 600);
+    }
+
+
+
+    
 }
 
 function mostrarCadastro(){
