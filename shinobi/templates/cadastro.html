@@ -20,11 +20,11 @@
     </div>
 <div class="botoes">
     <img class="shinobi" src="/static/img/shinobi.svg" alt="">
-    <button onclick="mostrarLogin()">Mostrar Login</button>
-    <h2>OU</h2  >
-    <button onclick="mostrarCadastro()">Mostrar Cadastro</button>
+    <button id="btn">Faça Seu Login OU Cadastre-se</button>
+<!--onclick="mostrarLogin()"-->    
 </div>
-<div id="cadastro" class="invisivel">
+
+<div id="cadastro" class="mostrar">
     <form action="/" method="POST">
         {% csrf_token %}
         <h3>Cadastro</h3>

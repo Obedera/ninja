@@ -18,7 +18,7 @@ function exibirChat(){
 }
 
 //function mostrarCadastro(){
-//    document.querySelector('#login').classList.toggle('invisivel');
+//   document.querySelector('#login').classList.toggle('invisivel');
 //   document.querySelector('#cadastro').classList.toggle('invisivel');
 //}
 
@@ -26,6 +26,16 @@ function exibirChat(){
 //    document.querySelector('#cadastro').classList.toggle('invisivel');
 //    document.querySelector('#login').classList.toggle('invisivel');
 //}
+//-----------login
+let login = document.getElementById('login');
+let cadastro = document.getElementById('cadastro');
+let x = document.getElementById('btn');
+
+x.addEventListener('click', function(){
+  login.style.display = 'block';
+  cadastro.style.display = 'block';
+  x.style.display = 'none';
+}); 
 
 function aumentarFonteConsole(){
     let tamanhoFonte = Number(document.querySelector('textarea[name="debugtexto"]').style.fontSize.split('pt')[0]);

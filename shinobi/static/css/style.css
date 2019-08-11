@@ -16,7 +16,9 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
 }
+
 .arrastar{
     background-color: dimgray;
     border-radius: 8px 8px 8px 8px;
@@ -39,10 +41,9 @@ body{
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.300);
     height: 100vh;
     width: 100vw;
-/*    border-radius: 8px 8px 8px 8px;*/
 }
 .flogin{
     display: block;
@@ -55,14 +56,15 @@ body{
     margin-bottom: 10px;
 }
 .botoes{
-    
-}
-
-.cadastro p, button{
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+#login{
+    display: none;
+}
+#cadastro{
+    display: none;
 }
 input{
     border-radius: 3%;
@@ -135,9 +137,12 @@ label {
     right: 5vw;
 }
 
-/*.invisivel{
+.invisivel{
     display: none;
-}*/
+}
+.mostrar{
+    display: block;
+}
 
 .chat button{
     background-color: dimgray;
