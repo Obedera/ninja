@@ -17,15 +17,15 @@ function exibirChat(){
     
 }
 
-function mostrarCadastro(){
-    document.querySelector('#login').classList.toggle('invisivel');
-    document.querySelector('#cadastro').classList.toggle('invisivel');
-}
+//function mostrarCadastro(){
+//    document.querySelector('#login').classList.toggle('invisivel');
+//   document.querySelector('#cadastro').classList.toggle('invisivel');
+//}
 
-function mostrarLogin(){
-    document.querySelector('#cadastro').classList.toggle('invisivel');
-    document.querySelector('#login').classList.toggle('invisivel');
-}
+//function mostrarLogin(){
+//    document.querySelector('#cadastro').classList.toggle('invisivel');
+//    document.querySelector('#login').classList.toggle('invisivel');
+//}
 
 function aumentarFonteConsole(){
     let tamanhoFonte = Number(document.querySelector('textarea[name="debugtexto"]').style.fontSize.split('pt')[0]);
