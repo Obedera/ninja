@@ -15,5 +15,7 @@ def analizar_css(css):
         Erros += '\nVocê colocou  ' + linha_css[3] +', o correto é display:'
     if linha_css[4] != 'padding:':
         Erros += '\nVocê colocou  ' + linha_css[4] +', o correto é padding:'
+    if Erros == '':
+        return 'Não detectei nenhum erro'
 
     return Erros
