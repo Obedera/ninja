@@ -42,7 +42,7 @@ def login(request):
         validacao = request.POST.get('senha')
         user = Cadastro.objects.filter(email=email_log, senha=validacao).first()
         if user is not None:
-            print('verdadeiro')
+           
             context = {'user': user}
             return render(request, 'console.html', context)
         else:
