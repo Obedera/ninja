@@ -69,10 +69,11 @@ def console(request):
         
             if texto_convertido['linguagem'] == 'C':
                 erros = analizar_css(texto_convertido['texto'])
-                
+
             user.numero_linhas = str(linhas+linhas_bd)
             print(user.numero_linhas)
-            return JsonResponse({'texto':erros}, status=200)
+            print(erros[1]) 
+            return JsonResponse({'texto':erros[0]}, status=200)
         return JsonResponse({'texto':'Você não está logado'}, status=200)
 
     return render(request, 'console.html',{})

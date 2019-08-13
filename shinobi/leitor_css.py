@@ -1,10 +1,12 @@
 import re
 def analizar_css(css):
     texto_css = css
-    if texto_css == '':
-        return 'Digite alguma coisa'
     linha_css = texto_css.splitlines()
     Erros = ''
+    if texto_css == '':
+        Erros = 'Digite alguma coisa'
+    numero_erros = 0  
+    
     lista_tags = ['body','aside','header','main','html','head','div','nav','section','p','h1','h2','h3','h4','h5','h6','span','img','button','input','form','select','ul','li','ol','option','textarea','hr','table','a','label','*',''] 
 
     def quebrar_por_palavra(linha):
@@ -54,6 +56,7 @@ def analizar_css(css):
     
     def checar_selectors(lista):
         erros = ''
+        numero_erro = 0
         palavras_selectors = []
         contador = 0
         while contador<len(lista):
@@ -65,19 +68,27 @@ def analizar_css(css):
                 pass
             else:
                 erros += f'O selector {i} não existe'
-        
-        return erros
+                numero_erro += 1
+
+        dado = [erros,numero_erro]
+        return dado
     
-    Erros += checar_selectors(lista_selectors) 
+    itens = checar_selectors(lista_selectors) 
+    Erros += itens[0]
+    numero_erros += itens[1]
 
     if lista_letras.count('{') > lista_letras.count('}'):
         Erros += 'Você esqueceu de colocar "}"\n'
+        numero_erros += 1  
+
     if lista_letras.count('{') < lista_letras.count('}'):
         Erros += 'Você esqueceu de colocar "{"\n'
+        numero_erros += 1  
+
     
     
     
     if Erros == '':
-        return 'Não detectei nenhum erro'
-        
-    return Erros
+        Erros = 'Não detectei nenhum erro'
+    dados = [Erros,numero_erros]
+    return dados
