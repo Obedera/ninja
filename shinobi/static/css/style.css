@@ -1,22 +1,21 @@
 body{
-    margin: 0;
-    cursor: url('/static/img/kunai.cur'), auto;
     color: white;
+    cursor: url('/static/img/kunai.cur'), auto;
     font-family: 'Bungee', cursive;
+    margin: 0;
 }
 .fundos{
-    display: flex;
-    flex-direction: column;
     background-image: url('/static/img/fundo.jpg');
- /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
+    /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
     background-repeat: no-repeat;
     background-size: 120%;
     background-attachment: fixed;
-    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
 }
 nav{
-    height: 30px;
     background-color: rgba(157, 165, 52, 0.5);
+    height: 30px;
 }
 
 .arrastar{
@@ -37,18 +36,18 @@ nav{
 }
 /* PARA HTML DO CADASTRO */
 .login{
-    display: flex;
-    justify-content: space-around;
     align-items: center;
+    display: flex;
     flex-direction: row;
-    width: 99vw;
+    justify-content: space-around;
     height: 100vh;
+    width: 99vw;
 }
 .flogin{
-    margin-top: 100px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 100px;
     padding: 10%;
 }
 .flogin input{
@@ -64,40 +63,40 @@ nav{
 }
 .botoes{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     height: 100%;
+    justify-content: space-between;
 }
 #btn{
+    background-color: rgba(157, 165, 52, 0.5);
     border: 0;
     color: white;
     display: flex;
-    height: 40px;
-    background-color: rgba(157, 165, 52, 0.5);
     font-family: 'Bungee', cursive;
-    -webkit-border-radius: 2px;
+    height: 40px;
+    /* -webkit-border-radius: 2px; */
 }
 #login{
-    display: none;
-    width: 35%;
-    height: 100%;
     background-color: rgba(157, 165, 52, 0.5);
-    -webkit-border-radius: 2px;
+    display: none;
+    height: 100%;
+    width: 35%;
+    /* -webkit-border-radius: 2px; */
 }
 #cadastro{
-    display: none;
-    width: 35%;
-    height: 100%;
     background-color: rgba(157, 165, 52, 0.5);
-    -webkit-border-radius: 2px;
+    display: none;
+    height: 100%;
+    width: 35%;
+    /* -webkit-border-radius: 2px; */
 }
 .mostrar{
-    margin-top: 90px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    margin-top: 90px;
     padding: 5%;
+    width: 100%;
 }
 .mostrar input{
     margin: 10px;
@@ -105,25 +104,25 @@ nav{
 }
 
 .informacao{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    height: 40px;
     background-color: rgba(157, 165, 52, 0.5);
-    -webkit-border-radius: 2px;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    /* -webkit-border-radius: 2px; */
 }
 .ajuste{
-    display: flex;
     align-items: center;
-    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.300);
+    display: flex;
+    flex-direction: column;
     height: 100vh;
 }
 .ajuste  h1{
     color: rgb(157, 165, 52);
-    margin: 0;
-    font-size: 60px;
     font-family: 'Permanent Marker', cursive;
+    font-size: 60px;
+    margin: 0;
 }
 .ajuste a{
     text-decoration: none; 
@@ -236,7 +235,7 @@ textarea{
     width: 100%;
 }
 
-.debug nav button,select{
+.debug nav button, .debug nav select{
     background-color: dimgray;
     border-radius: 8px 8px 8px 8px;
     border: 1px solid black;
