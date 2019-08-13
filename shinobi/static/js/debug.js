@@ -60,6 +60,9 @@ function submitFormDebug(data){
        let erros_json = JSON.stringify( data )
        let erros = JSON.parse(erros_json)
        document.querySelector('#debug_resposta').value = erros.texto;
+       document.querySelectorAll('div[name="perfilUser"] span')[2].innerHTML = erros.numeroLinhas;
+       document.querySelectorAll('div[name="perfilUser"] span')[3].innerHTML = erros.numeroErros;
+
     })
 }
 

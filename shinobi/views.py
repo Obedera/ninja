@@ -71,9 +71,9 @@ def console(request):
                 erros = analizar_css(texto_convertido['texto'])
 
             user.numero_linhas = str(linhas+linhas_bd)
-            print(user.numero_linhas)
-            print(erros[1]) 
-            return JsonResponse({'texto':erros[0]}, status=200)
+            user.numero_erros = str(erros[1])
+            user.save()
+            return JsonResponse({'texto':erros[0],'numeroLinhas':user.numero_linhas,'numeroErros':user.numero_erros}, status=200)
         return JsonResponse({'texto':'Você não está logado'}, status=200)
 
     return render(request, 'console.html',{})
