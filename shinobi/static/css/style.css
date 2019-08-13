@@ -71,10 +71,11 @@ nav{
 }
 #login{
     display: none;
+    height: 100%;
 }
 #cadastro{
     display: none;
-    padding-left: 5vw;
+    height: 100%;
 }
 .informacao{
     display: flex;
