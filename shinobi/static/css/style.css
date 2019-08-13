@@ -44,10 +44,15 @@ nav{
     height: 99vh;
 }
 .flogin{
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+    padding: 10%;
+}
+.flogin input{
+    margin: 20px;
+    width: 100%;
 }
 #shinobi{
     display: flex;
@@ -86,10 +91,18 @@ nav{
     -webkit-border-radius: 2px;
 }
 .mostrar{
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 5%;
 }
+.mostrar input{
+    margin: 10px;
+    width: 70%;
+}
+
 .informacao{
     display: flex;
     justify-content: center;
