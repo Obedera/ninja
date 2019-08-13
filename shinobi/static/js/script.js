@@ -41,11 +41,13 @@ fundo.addEventListener("mousemove",moverFundo);
 let login = document.getElementById('login');
 let cadastro = document.getElementById('cadastro');
 let x = document.getElementById('btn');
+let image = document.getElementById('shinobi');
 
 x.addEventListener('click', function(){
   login.style.display = 'block';
   cadastro.style.display = 'block';
   x.style.display = 'none';
+  image.style.display = 'none';
 }); 
 
 function aumentarFonteConsole(){
