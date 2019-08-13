@@ -44,9 +44,10 @@ nav{
     height: 99vh;
 }
 .flogin{
-    display: block;
-    width: 30%;
-    height: 250px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
 }
 .shinobi{
     display: flex;
@@ -71,11 +72,18 @@ nav{
 }
 #login{
     display: none;
+    width: 35%;
     height: 100%;
 }
 #cadastro{
     display: none;
+    width: 35%;
     height: 100%;
+}
+.mostrar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .informacao{
     display: flex;

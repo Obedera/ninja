@@ -8,17 +8,15 @@
             <form action="/login" method="POST" class="flogin">
                 {% csrf_token %}
                 <h3>Login</h3>
-                
+                    
                 {{msg}}
-                <label>E-mail</label>
-                <input type="email" name="email" required>
                 
-                <label>Senha</label>
-                <input type="password" name="senha" required>
-                
-                <input type="submit" value="login">
-            </form>
-            
+                <input type="email" name="email" placeholder= "E-mail"required>
+                    
+                <input type="password" name="senha" placeholder="Senha"required>
+                    
+                <input type="submit" value="entrar">
+            </form>           
         </div>
         <div class="botoes">
             <div class="shinobi"><a href="/"><img src="/static/img/shinobi.svg" alt=""></a></div>
@@ -29,16 +27,15 @@
             <!--onclick="mostrarLogin()"-->    
         </div>
         
-        <div id="cadastro" class="mostrar">
-            <form action="/" method="POST">
+        <div id="cadastro" >
+            <form action="/" method="POST" class="mostrar">
                 {% csrf_token %}
                 <h3>Cadastro</h3>
                 {{msg}}
-                <label>Nome</label>
-                <input type="text" name="nome" required>
+
+                <input type="text" name="nome" placeholder="Nome"required>
                 
-                <label>Sobrenome</label>
-                <input type="text" name="sobrenome" required>
+                <input type="text" name="sobrenome" placeholder="Sobrenome"required>
                 
                 <label>Gênero</label>
                 <select name="genero" required>
@@ -47,14 +44,11 @@
                     <option value="OU">Outros</option>
                 </select>
                 
-                <label>E-mail</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email" placeholder="E-mail"required>
                 
-                <label>senha</label>
-                <input type="password" name="senha" required>
+                <input type="password" name="senha" placeholder="Senha" required>
                 
-                <label>Confirmar Senha</label>
-        <input type="password" name="confirmar_senha" required>
+        <input type="password" name="confirmar_senha" placeholder="Confirmar senha" required>
         
         <input type="submit" value="Cadastrar">
     </form>
