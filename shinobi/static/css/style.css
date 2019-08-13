@@ -49,15 +49,25 @@ nav{
     height: 250px;    
 }
 .shinobi{
-    width: auto;
-    height: 150px;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+.shinobi img{
+    width: 200px;
 }
 .botoes{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     height: 100%;
+}
+#btn{
+    border: 0;
+    color: white;
+    display: flex;
+    height: 40px;
+    background-color: rgba(157, 165, 52, 0.5);
+    font-family: 'Bungee', cursive;
 }
 #login{
     display: none;
@@ -71,7 +81,7 @@ nav{
     justify-content: center;
     align-items: center;
     height: 40px;
-    background-color: rgba(157, 165, 52, 0.5)
+    background-color: rgba(157, 165, 52, 0.5);
 }
 .ajuste{
     display: flex;
