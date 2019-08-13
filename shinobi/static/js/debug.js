@@ -60,14 +60,17 @@ function submitFormDebug(data){
 }
 
 // Arrastar elementos
-
+document.querySelector("#quadradoDebug").style.zIndex = "1";
+let quadradoDebug = document.querySelector("#quadradoDebug");
 let quadradoResposta = document.querySelector("#quadradoResposta");
 let  elementoPX = 0;
 let  elementoPY = 0;
 let elemento;
-
+let contador = 0;
 function segurarElemento(e) {
     elemento = e.target;
+    contador += 1;
+    elemento.style.zIndex = contador;
     elementoPX = e.pageX - elemento.offsetLeft;
     elementoPY = e.pageY - elemento.offsetTop;
 
@@ -85,4 +88,5 @@ function soltarElemento() {
     removeEventListener("mouseup", soltarElemento);
 }
 
+quadradoDebug.addEventListener("mousedown",segurarElemento);
 quadradoResposta.addEventListener("mousedown",segurarElemento);

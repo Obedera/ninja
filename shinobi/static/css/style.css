@@ -114,11 +114,18 @@ textarea{
     width: 45vw;
     height: 50vh;
 }
-
-.debug{
+.debugador{
     background-color: rgba(105, 105, 105, 0.5);
     border-radius: 8px 8px 8px 8px;
     border: 1px solid black;
+
+}
+
+.debug{
+    display: flex;
+    align-items: center;
+    width: 47vw;
+    height: 64vh;
     padding: 0 3px;
     align-self: center;
 }
@@ -141,8 +148,15 @@ textarea{
     flex-direction: row;
     width: 100%;
 }
-
 .debugResposta{
+    width: 47vw;
+    height: 28vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.debugResposta textarea{
     background-color: white;
     color: black;
     width: 45vw;

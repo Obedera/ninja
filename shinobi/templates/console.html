@@ -18,29 +18,35 @@
         <p>{{user.nome}}</p>
     
     </main>
-    <section class="debug">
-        <h3>Digite seu Codigo aqui:</h3>
-        
-        <form action="/console" id="debug" method="POST">
-            {% csrf_token %}
-            <nav>
-                <button onclick="aumentarFonteConsole()">+</button>
-                <button onclick="diminuirFonteConsole()">-</button>
-                <select name="linguagem">
-                    <option value="H">HTML</option>
-                    <option value="J">Javascript</option>
-                    <option value="C">CSS</option>
-                </select>
-                <button onclick="debug()">Testar</button>
-            </nav>
-            <textarea name="debugtexto" rows="5" cols="33" style="font-size: 8pt;" placeholder="Digite html:5 para montar a estrutura"></textarea>
-            {{msg}}
-        </form>
-        <div id="quadradoResposta" class="arrastar">
-            Resposta
-            <textarea id="debug_resposta" class="debugResposta" rows="5"  disabled cols="33"></textarea>
-        </div>
-    </section>
+    <div class="debugador">
+        <section class="debug">
+        <div id="quadradoDebug" class="arrastar">
+            Digite seu Codigo aqui:
+                
+                <form action="/console" id="debug" method="POST">
+                    {% csrf_token %}
+                    <nav>
+                        <button onclick="aumentarFonteConsole()">+</button>
+                        <button onclick="diminuirFonteConsole()">-</button>
+                        <select name="linguagem">
+                            <option value="H">HTML</option>
+                            <option value="J">Javascript</option>
+                            <option value="C">CSS</option>
+                        </select>
+                        <button onclick="debug()">Testar</button>
+                    </nav>
+                    <textarea name="debugtexto" rows="5" cols="33" style="font-size: 8pt;" placeholder="Digite html:5 para montar a estrutura"></textarea>
+                    {{msg}}
+                </form>
+            </div>
+        </section>
+        <section class="debugResposta">
+            <div id="quadradoResposta" class="arrastar">
+                Resposta
+                <textarea id="debug_resposta" rows="5"  disabled cols="33"></textarea>
+            </div>
+        </section>
+    </div>
     
     
         <aside class="chat">
