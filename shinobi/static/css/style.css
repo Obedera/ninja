@@ -16,7 +16,7 @@ body{
 }
 nav{
     height: 30px;
-    background-color: rgba(45, 12, 190, 0.5)
+    background-color: rgba(157, 165, 52, 0.5);
 }
 
 .arrastar{
@@ -141,7 +141,25 @@ input{
                          'user erros';
     
 }
-
+.sair{
+    position: absolute;
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+    width: 40px;
+    height: 40px;
+    background-image: url('/static/img/sair.png');
+    background-size: 40px 40px;
+    background-color: rgba(255, 0, 0, 0.464);
+    cursor: pointer;
+    border-radius: 8px 0px 0px 8px;
+    border: 1px solid black;
+}
+.sair a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
 .console .user{
     grid-area: user;
 }
@@ -156,7 +174,7 @@ input{
 
 }
 .console main div:hover{
-    background-color: rgba(45, 12, 190, 0.5);
+    background-color: rgba(157, 165, 52, 0.5);
     transition-duration: 0.5s;
 }
 
@@ -249,7 +267,10 @@ textarea{
     border-radius: 8px 8px 8px 8px;
     transition-duration: 1s;
 }
-
+.debug nav select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 .debug nav select:hover{
     background-color: transparent;
     transition-duration: 0.5s;
@@ -257,6 +278,14 @@ textarea{
 .debug nav button:hover{
     background-color: transparent;
     transition-duration: 0.5s;
+}
+.debug nav select:active{
+    background-color: rgba(45, 12, 190, 0.7);
+    transition-duration: 0.1s;
+}
+.debug nav button:active{
+    background-color: rgba(45, 12, 190, 0.7);
+    transition-duration: 0.1s;
 }
 
 .debugResposta{
