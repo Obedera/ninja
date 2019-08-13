@@ -49,11 +49,11 @@ nav{
     align-items: center;
   
 }
-.shinobi{
+#shinobi{
     display: flex;
     justify-content: center;
 }
-.shinobi img{
+#shinobi img{
     width: 200px;
 }
 .botoes{
@@ -74,11 +74,15 @@ nav{
     display: none;
     width: 35%;
     height: 100%;
+    background-color: rgba(157, 165, 52, 0.5);
+    -webkit-border-radius: 2px;
 }
 #cadastro{
     display: none;
     width: 35%;
     height: 100%;
+    background-color: rgba(157, 165, 52, 0.5);
+    -webkit-border-radius: 2px;
 }
 .mostrar{
     display: flex;
@@ -99,11 +103,14 @@ nav{
     background-color: rgba(0, 0, 0, 0.300);
     height: 95vh;
 }
-.ajuste h1{
+.ajuste  h1{
     color: rgb(157, 165, 52);
     margin: 0;
     font-size: 60px;
     font-family: 'Permanent Marker', cursive;
+}
+.ajuste a{
+    text-decoration: none; 
 }
 input{
     border-radius: 3%;

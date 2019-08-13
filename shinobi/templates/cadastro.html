@@ -2,7 +2,7 @@
 {%extends 'shared/layout.html'%}
 {%block conteudo%}
 <section class="ajuste">
-    <h1>NINJA VIRTUAL <span>.</span></h1>
+    <a href="/"><h1>NINJA VIRTUAL <span>.</span></h1></a>
     <section class="login">
         <div id="login">
             <form action="/login" method="POST" class="flogin">
@@ -19,7 +19,7 @@
             </form>           
         </div>
         <div class="botoes">
-            <div class="shinobi"><a href="/"><img src="/static/img/shinobi.svg" alt=""></a></div>
+            <div id="shinobi"><a href="/"><img src="/static/img/shinobi.svg" alt=""></a></div>
             <button id="btn">Faça Seu Login OU Cadastre-se</button>
             <div class="informacao">
                 <span>Saiba Mais <a href="#">></a> </span>
