@@ -12,7 +12,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
 }
 nav{
     height: 30px;
@@ -41,7 +40,8 @@ nav{
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    width: 90vw;
+    width: 99vw;
+    height: 99vh;
 }
 .flogin{
     display: block;
@@ -55,8 +55,9 @@ nav{
 }
 .botoes{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+    height: 100%;
 }
 #login{
     display: none;
@@ -69,7 +70,6 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 162px;
     height: 40px;
     background-color: rgba(157, 165, 52, 0.5)
 }
@@ -78,6 +78,7 @@ nav{
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.300);
+    height: 95vh;
 }
 .ajuste h1{
     color: rgb(157, 165, 52);
