@@ -10,11 +10,7 @@ function exibirChat(){
         setTimeout(function(){
             document.querySelector('.chat form').classList.toggle('invisivel');
         }, 600);
-    }
-
-
-
-    
+    } 
 }
 
 //function mostrarCadastro(){

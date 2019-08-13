@@ -47,7 +47,6 @@ def analizar_css(css):
             lista_selectors.append(lista_separada[i].replace('\n',''))
             i += 2 
             
-        print(lista_selectors)
         return lista_selectors
  
     
