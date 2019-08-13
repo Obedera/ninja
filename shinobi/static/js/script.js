@@ -13,6 +13,21 @@ function exibirChat(){
     } 
 }
 
+// mover fundo
+
+let fundo = document.querySelector('body');
+let fundoX;
+let fundoY;
+
+
+function moverFundo(e){
+    fundoX = (e.pageX * -1 / 15);
+    fundoY = (e.pageY * -1 / 15);
+    fundo.style.backgroundPosition = fundoX+'px '+fundoY+'px';
+
+}
+
+fundo.addEventListener("mousemove",moverFundo);
 //function mostrarCadastro(){
 //   document.querySelector('#login').classList.toggle('invisivel');
 //   document.querySelector('#cadastro').classList.toggle('invisivel');

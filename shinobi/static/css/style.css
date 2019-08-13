@@ -10,8 +10,9 @@ body{
     background-image: url('/static/img/fundo.jpg');
  /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 120%;
     background-attachment: fixed;
+    /* overflow: hidden; */
 
 }
 nav{
