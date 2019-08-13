@@ -90,3 +90,8 @@ function soltarElemento() {
 
 quadradoDebug.addEventListener("mousedown",segurarElemento);
 quadradoResposta.addEventListener("mousedown",segurarElemento);
+
+
+function exibirPerfil(){
+    document.querySelector('div[name="perfilUser"]').classList.toggle('invisivel');
+}

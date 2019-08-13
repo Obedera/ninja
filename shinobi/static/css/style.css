@@ -17,7 +17,7 @@ body{
 }
 nav{
     height: 30px;
-    background-color: rgba(157, 165, 52, 0.5)
+    background-color: rgba(45, 12, 190, 0.5)
 }
 
 .arrastar{
@@ -114,6 +114,15 @@ input{
 }
 .perfil p{
     margin: 5px;
+}
+.perfil button{
+    background-color: transparent;
+    border: 0;
+    margin: 5px 0 5px;
+    font-size: 12pt;
+    cursor: pointer;
+    color: white;
+    width: 90%;
 }
 .quadradouser{
     display: flex;
