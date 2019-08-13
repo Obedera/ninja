@@ -37,6 +37,18 @@ class Cadastro(models.Model):
         verbose_name = 'Senha'
     )
 
+    numero_erros = models.CharField(
+        max_length = 255,
+        default=0,
+        verbose_name = 'Nº de Erros'
+    )
+
+    numero_linhas = models.CharField(
+        max_length = 255,
+        default=0,
+        verbose_name = 'Nº de Linhas'
+    )
+
     criacao = models.DateTimeField(auto_now=True)
     ativado = models.BooleanField(default=True)
     

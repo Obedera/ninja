@@ -53,16 +53,27 @@ def login(request):
 def console(request):
     if request.method == 'POST':
         texto_convertido = json.loads(request.POST.get('json'))
-        if texto_convertido['linguagem'] == 'H':
-            erros = analizar_html(texto_convertido['texto'])
+        emailUser = texto_convertido['email']
+        senhaUser = texto_convertido['senha']
+        user = Cadastro.objects.filter(email=emailUser, senha=senhaUser).first()
+        if user is not None:
+            linhas_bd = int(user.numero_linhas)
+            erros_bd = int(user.numero_erros)
+            linhas = len(texto_convertido['texto'].split('\n'))
             
-        if texto_convertido['linguagem'] == 'J':
-            erros = analizar_js(texto_convertido['texto'])
-    
-        if texto_convertido['linguagem'] == 'C':
-            erros = analizar_css(texto_convertido['texto'])
-
-        return JsonResponse({'texto':erros}, status=200)
+            if texto_convertido['linguagem'] == 'H':
+                erros = analizar_html(texto_convertido['texto'])
+                
+            if texto_convertido['linguagem'] == 'J':
+                erros = analizar_js(texto_convertido['texto'])
+        
+            if texto_convertido['linguagem'] == 'C':
+                erros = analizar_css(texto_convertido['texto'])
+                
+            user.numero_linhas = str(linhas+linhas_bd)
+            print(user.numero_linhas)
+            return JsonResponse({'texto':erros}, status=200)
+        return JsonResponse({'texto':'Você não está logado'}, status=200)
 
     return render(request, 'console.html',{})
 
