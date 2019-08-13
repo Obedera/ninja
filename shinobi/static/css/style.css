@@ -140,19 +140,27 @@ input{
     margin-bottom: 20px;
     border-radius: 0px 8px 8px 0px;
     border: 1px solid black;
+
 }
+.console main div:hover{
+    background-color: rgba(45, 12, 190, 0.5);
+    transition-duration: 0.5s;
+}
+
 .perfil p{
     margin: 5px;
 }
 .perfil button{
     background-color: transparent;
     border: 0;
+    font-family: 'Bungee', cursive;
     margin: 5px 0 5px;
     font-size: 12pt;
     cursor: pointer;
     color: white;
     width: 90%;
 }
+
 .quadradouser{
     display: flex;
     justify-content: space-around;
@@ -231,11 +239,11 @@ textarea{
 
 .debug nav select:hover{
     background-color: transparent;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 .debug nav button:hover{
     background-color: transparent;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 .debugResposta{
