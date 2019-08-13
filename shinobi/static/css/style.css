@@ -10,12 +10,13 @@ body{
     background-image: url('/static/img/fundo.jpg');
  /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 120%;
     background-attachment: fixed;
+    /* overflow: hidden; */
 }
 nav{
     height: 30px;
-    background-color: rgba(157, 165, 52, 0.5)
+    background-color: rgba(45, 12, 190, 0.5)
 }
 
 .arrastar{
@@ -134,13 +135,52 @@ input{
 
 /* PARA HTML DO CONSOLE */
 .console{
-    display: flex;
-    flex-direction: row;
+    padding-top: 40px;
+    display: grid;
+    grid-template-areas: 'user debug'
+                         'user erros';
+    
 }
 
+.console .user{
+    grid-area: user;
+}
 .console main{
-    height: 100%;
-    background-color: #4500d0;
+    position: fixed;
+}
+.console main .perfil{
+    background-color: dimgray;
+    margin-bottom: 20px;
+    border-radius: 0px 8px 8px 0px;
+    border: 1px solid black;
+}
+.perfil p{
+    margin: 5px;
+}
+.perfil button{
+    background-color: transparent;
+    border: 0;
+    margin: 5px 0 5px;
+    font-size: 12pt;
+    cursor: pointer;
+    color: white;
+    width: 90%;
+}
+.quadradouser{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 5px;
+}
+.dadosuser{
+    margin-right: 20px;
+}
+
+.console .quadradouser img{
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 label,textarea {
@@ -156,18 +196,14 @@ textarea{
     width: 45vw;
     height: 50vh;
 }
-.debugador{
-    background-color: rgba(105, 105, 105, 0.5);
-    border-radius: 8px 8px 8px 8px;
-    border: 1px solid black;
 
-}
 
 .debug{
     display: flex;
     align-items: center;
     width: 47vw;
     height: 64vh;
+    grid-area: debug;
     padding: 0 3px;
     align-self: center;
 }
@@ -218,6 +254,7 @@ textarea{
 .debugResposta{
     width: 47vw;
     height: 28vh;
+    grid-area: erros;
     display: flex;
     align-items: center;
     justify-content: center;
