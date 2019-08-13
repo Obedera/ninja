@@ -69,6 +69,7 @@ nav{
     height: 40px;
     background-color: rgba(157, 165, 52, 0.5);
     font-family: 'Bungee', cursive;
+    -webkit-border-radius: 2px;
 }
 #login{
     display: none;
@@ -95,6 +96,7 @@ nav{
     align-items: center;
     height: 40px;
     background-color: rgba(157, 165, 52, 0.5);
+    -webkit-border-radius: 2px;
 }
 .ajuste{
     display: flex;
