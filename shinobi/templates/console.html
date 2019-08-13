@@ -9,16 +9,28 @@
     <script src="{% static 'js/debug.js' %}" defer></script>
     <script src="{% static 'js/chat.js' %}" defer></script>
 
-<nav>
-    <p></p>
-    <p></p>
-</nav>
 <div class="console">
-    <main>
-        <img src="" alt="">
-        <p>{{user.nome}} {{user.sobrenome}}</p>
-    
-    </main>
+    <div class="user">
+        <main>
+            <div class="quadradouser perfil">
+                <div class="dadosuser">
+                    <p>Nome: {{user.nome}}</p>
+                    <p>Sobrenome: {{user.sobrenome}}</p>
+                    <p>Status: Online</p>
+                </div>
+                <img src="/static/img/user.png" alt="">
+            </div>
+            <div class="perfil">
+                <p>Ver Perfil</p>
+            </div>
+            <div class="perfil">
+                <p>Material de Ajuda</p>
+            </div>
+            <div class="perfil">
+                <p>Ninja Class</p>
+            </div>
+        </main>
+    </div>
     <div class="debugador">
         <section class="debug">
             <div id="quadradoDebug" class="arrastar">
@@ -50,7 +62,7 @@
         </section>
     </div>
     
-    
+</div>
         <aside class="chat">
             <form action="/chat" id="chatBot" class="invisivel" style="transition: opacity .5s; opacity: 0;" method="POST">
                 {% csrf_token %}
@@ -62,8 +74,6 @@
             </form>
             <button class="chatlogo" onclick="exibirChat()"></button>
         </aside>
-
-</div>
 
 {% else %}
 
