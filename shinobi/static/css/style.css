@@ -58,9 +58,20 @@ nav{
 #shinobi{
     display: flex;
     justify-content: center;
+    transition: 0.2s;
+}
+#shinobi:hover{
+    transform: rotateY(180deg);
+    transition: 0.5s;
 }
 #shinobi img{
     width: 200px;
+    transition: 0.5s;
+}
+#shinobi img:hover{
+  /*  transform: rotateY(180deg);*/
+    width: 180px;
+    transition: 0.2s;
 }
 .botoes{
     display: flex;
