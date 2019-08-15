@@ -26,7 +26,6 @@ nav{
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    padding: 5px 0 0;
     position: absolute;
     text-align: center;
     user-select: none;
@@ -182,8 +181,7 @@ input{
     background-color: dimgray;
     border-radius: 0px 8px 8px 0px;
     border: 1px solid black;
-    margin-bottom: 20px;
-
+    margin-bottom: 5vh;
 }
 .console main div:hover{
     background-color: rgba(157, 165, 52, 0.5);
@@ -199,7 +197,7 @@ input{
     margin-right: 20px;
 }
 .perfil p{
-    margin: 5px;
+    margin: 0;
 }
 .perfil button{
     background-color: transparent;
@@ -231,7 +229,6 @@ textarea{
     box-shadow: 1px 1px 1px #999;
     height: 50vh;
     line-height: 1.5;
-    padding: 10px;
     width: 45vw;
 }
 
@@ -244,7 +241,9 @@ textarea{
     padding: 0 3px;
     width: 47vw;
 }
-
+.debug textarea{
+    height: 47vh;
+}
 .debug form{
     align-items: center;
     display: flex;
@@ -260,10 +259,9 @@ textarea{
 .debug nav{
     align-items: center;
     display: flex;
-    flex-direction: row;
-    height: 5vh;
+    flex-wrap: wrap;
+    height: 6vh;
     justify-content: space-around;
-    width: 100%;
 }
 
 .debug nav button, .debug nav select{
@@ -275,19 +273,21 @@ textarea{
     font-size: 12pt;
     height: 4vh;
     text-align: center;
-    transition-duration: 1s;
+    text-align-last: center;
+    /* transition-duration: 1s; */
     width: 100px;
 }
+
 .debug nav select{
     -webkit-appearance: none;
     -moz-appearance: none;
 }
 .debug nav select:hover{
-    background-color: transparent;
+    background-color: dimgray;
     transition-duration: 0.5s;
 }
 .debug nav button:hover{
-    background-color: transparent;
+    background-color: dimgray;
     transition-duration: 0.5s;
 }
 .debug nav select:active{
@@ -305,7 +305,7 @@ textarea{
     height: 28vh;
     justify-content: center;
     grid-area: erros;
-    width: 47vw;
+    width: 45.9vw;
 }
 
 .debugResposta textarea{

@@ -72,8 +72,8 @@ def console(request):
 
             if linhas_bd<linhas:
                 user.numero_linhas = str(linhas+linhas_bd)
-            if erros_bd<erros[1]:
-                user.numero_erros = str(erros[1])
+            
+            user.numero_erros = str(erros[1]+erros_bd)
             user.save()
             return JsonResponse({'texto':erros[0],'numeroLinhas':user.numero_linhas,'numeroErros':user.numero_erros}, status=200)
         return JsonResponse({'texto':'Você não está logado'}, status=200)
