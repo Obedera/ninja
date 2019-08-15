@@ -51,8 +51,11 @@ nav{
     padding: 10%;
 }
 .flogin input{
-    margin: 20px;
+    margin: 3px;
     width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border: 0;
 }
 #shinobi{
     display: flex;
@@ -102,7 +105,7 @@ nav{
     height: 100%;
     width: 35%;
     border-radius: 3px;
-    transition: 10s;
+    transition: 4s;
 }
 #cadastro{
     background-color: rgba(18, 227, 27, 0.5);
@@ -110,19 +113,21 @@ nav{
     height: 100%;
     width: 35%;
     border-radius: 3px;
-    transition: 10s;
+    transition: 4s;
 }
 .mostrar{
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
     padding: 5%;
     width: 100%;
 }
 .mostrar input{
     margin: 10px;
     width: 70%;
+    height: 40px;
+    border-radius: 3px;
+    border: 0;
 }
 
 .informacao{
@@ -159,6 +164,10 @@ nav{
 }
 input{
     border-radius: 3%;
+}
+.opcoes{
+    width: 60%;
+    height: 30px;
 }
 /* COLOCAR TUDO DO HTML CADASTRO NESSE ESPAÇO */
 
