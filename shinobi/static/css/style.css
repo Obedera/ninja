@@ -14,12 +14,12 @@ body{
     flex-direction: column;
 }
 nav{
-    background-color: rgba(157, 165, 52, 0.5);
+    background-color: rgb(46, 46, 46);
     height: 30px;
 }
 
 .arrastar{
-    background-color: dimgray;
+    background-color: rgba(18, 227, 27,0.8);
     border-radius: 8px 8px 8px 8px;
     border: 1px solid black;
     color: white;
@@ -79,7 +79,7 @@ nav{
     justify-content: space-between;
 }
 #btn{
-    background-color: rgba(157, 165, 52, 0.5);
+    background-color: rgba(18, 227, 27, 0.5);
     border: 0;
     color: white;
     display: flex;
@@ -97,7 +97,7 @@ nav{
     transition: 2s;
 }
 #login{
-    background-color: rgba(157, 165, 52, 0.5);
+    background-color: rgba(18, 227, 27, 0.5);
     display: none;
     height: 100%;
     width: 35%;
@@ -105,7 +105,7 @@ nav{
     transition: 10s;
 }
 #cadastro{
-    background-color: rgba(157, 165, 52, 0.5);
+    background-color: rgba(18, 227, 27, 0.5);
     display: none;
     height: 100%;
     width: 35%;
@@ -149,7 +149,7 @@ nav{
     height: 100vh;
 }
 .ajuste  h1{
-    color: rgb(157, 165, 52);
+    color: rgb(39, 179, 62);
     font-family: 'Permanent Marker', cursive;
     font-size: 60px;
     margin: 0;
@@ -178,14 +178,20 @@ input{
     position: fixed;
 }
 .console main .perfil{
-    background-color: dimgray;
+    background-color: rgba(18, 227, 27,0.5);
     border-radius: 0px 8px 8px 0px;
     border: 1px solid black;
     margin-bottom: 5vh;
 }
 .console main div:hover{
-    background-color: rgba(157, 165, 52, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     transition-duration: 0.5s;
+}
+.console main div:hover p{
+    color: black;
+}
+.console main div:hover button{
+    color: black;
 }
 .console .quadradouser img{
     border: 1px solid black;
@@ -198,6 +204,9 @@ input{
 }
 .perfil p{
     margin: 0;
+    color: white;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 .perfil button{
     background-color: transparent;
@@ -208,6 +217,8 @@ input{
     font-size: 12pt;
     margin: 5px 0 5px;
     width: 90%;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 
 .quadradouser{
@@ -265,7 +276,7 @@ textarea{
 }
 
 .debug nav button, .debug nav select{
-    background-color: dimgray;
+    background-color: rgba(18, 227, 27,0.5);
     border-radius: 8px 8px 8px 8px;
     border: 1px solid black;
     color: white;
@@ -274,7 +285,7 @@ textarea{
     height: 4vh;
     text-align: center;
     text-align-last: center;
-    /* transition-duration: 1s; */
+    font-weight: bold;
     width: 100px;
 }
 
@@ -283,19 +294,20 @@ textarea{
     -moz-appearance: none;
 }
 .debug nav select:hover{
-    background-color: dimgray;
+    background-color: rgba(255, 255, 255,0.5);
     transition-duration: 0.5s;
+    color: black;
 }
 .debug nav button:hover{
-    background-color: dimgray;
+    background-color: rgba(255, 255, 255,0.5);
     transition-duration: 0.5s;
 }
 .debug nav select:active{
-    background-color: rgba(45, 12, 190, 0.7);
+    background-color: rgba(18, 227, 27,0.5);
     transition-duration: 0.1s;
 }
 .debug nav button:active{
-    background-color: rgba(45, 12, 190, 0.7);
+    background-color: rgba(18, 227, 27,0.5);
     transition-duration: 0.1s;
 }
 
@@ -358,7 +370,7 @@ label {
 }
 
 .chat button{
-    background-color: dimgray;
+    background-color: transparent   ;
     border: 1px solid black;
     border-radius: 50%;
     color: white;
@@ -388,7 +400,7 @@ label {
     flex-direction: row;
 }
 .chat div input{
-    background-color: dimgray;
+    background-color: rgb(46, 46, 46);
     border: 1px solid black;
     border-radius: 8px 8px 8px 8px;
     color: white;
