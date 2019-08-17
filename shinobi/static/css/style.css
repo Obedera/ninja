@@ -470,6 +470,16 @@ label {
     height: 4vh;
     width: 5vw;
 }
+/* erro console*/
+.error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+/* erro console */
 
 /* COLOCAR TUDO DO HTML CONSOLE NESSE ESPAÇO */
 
