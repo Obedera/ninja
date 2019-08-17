@@ -140,7 +140,7 @@ nav{
 
 .informacao{
     align-items: center;
-    background-color: rgba(1, 169, 20, 0.5);
+    background-color: rgba(0, 66, 133, 0.5);
     display: flex;
     height: 40px;
     justify-content: center;
@@ -166,10 +166,15 @@ nav{
     height: 100vh;
 }
 .ajuste  h1{
-    color: rgb(39, 179, 62);
+    color: rgb(0, 66, 133);
     font-family: 'Permanent Marker', cursive;
     font-size: 60px;
     margin: 0;
+    
+}
+.ajuste h1 {
+    text-shadow: -1px 0 black, 0 1px black,
+    1px 0 black, 0 -1px black
 }
 .ajuste a{
     text-decoration: none; 
