@@ -8,27 +8,30 @@ body{
     background-image: url('/static/img/fundo.jpg');
     /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
     background-repeat: no-repeat;
-    background-size: 120%;
+    background-size: cover;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
 }
 nav{
-    background-color: rgb(46, 46, 46);
+    background-color: #1c1d1f;
     height: 30px;
 }
 
 .arrastar{
-    background-color: rgba(18, 227, 27,0.8);
+    background-color: rgb(0, 66, 133);
     border-radius: 8px 8px 8px 8px;
     border: 1px solid black;
     color: white;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18pt;
     position: absolute;
     text-align: center;
     user-select: none;
+    white-space: nowrap;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -41,7 +44,7 @@ nav{
     justify-content: space-around;
     height: 100vh;
     width: 99vw;
-    transition: 10s;
+    transition: 1s;
 }
 .flogin{
     align-items: center;
@@ -82,14 +85,15 @@ nav{
     justify-content: space-between;
 }
 #btn{
-    background-color: rgba(18, 227, 27, 0.5);
-    border: 0;
-    color: white;
-    display: flex;
     align-items: center;
+    background-color: rgba(0, 66, 133, 0.5);
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    display: flex;
     font-family: 'Bungee', cursive;
     height: 40px;
-    border-radius: 3px;
     transition: 1s;
 }
 #btn:hover{
@@ -100,20 +104,22 @@ nav{
     transition: 2s;
 }
 #login{
-    background-color: rgba(18, 227, 27, 0.5);
+    background-color: rgba(0, 66, 133, 0.5);
     display: none;
     height: 100%;
     width: 35%;
-    border-radius: 3px;
-    transition: 4s;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid black;
+    transition: 1s;
 }
 #cadastro{
-    background-color: rgba(18, 227, 27, 0.5);
+    background-color: rgba(0, 66, 133, 0.5);
     display: none;
     height: 100%;
     width: 35%;
-    border-radius: 3px;
-    transition: 4s;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid black;
+    transition: 1s;
 }
 .mostrar{
     align-items: center;
@@ -132,7 +138,7 @@ nav{
 
 .informacao{
     align-items: center;
-    background-color: rgba(157, 165, 52, 0.5);
+    background-color: rgba(1, 169, 20, 0.5);
     display: flex;
     height: 40px;
     justify-content: center;
@@ -149,6 +155,10 @@ nav{
 .ajuste{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.300);
+    background-image: url('/static/img/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -187,7 +197,7 @@ input{
     position: fixed;
 }
 .console main .perfil{
-    background-color: rgba(18, 227, 27,0.5);
+    background-color: rgba(0, 66, 133,0.8);
     border-radius: 0px 8px 8px 0px;
     border: 1px solid black;
     margin-bottom: 5vh;
@@ -212,10 +222,9 @@ input{
     margin-right: 20px;
 }
 .perfil p{
-    margin: 0;
+    margin: 5px 0 5px;
     color: white;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
+    font-weight: 200;
 }
 .perfil button{
     background-color: transparent;
@@ -226,8 +235,7 @@ input{
     font-size: 12pt;
     margin: 5px 0 5px;
     width: 90%;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
+    font-weight: 200;
 }
 
 .quadradouser{
@@ -256,13 +264,13 @@ textarea{
     align-items: center;
     align-self: center;
     display: flex;
-    height: 64vh;
+    height: 61vh;
     grid-area: debug;
-    padding: 0 3px;
-    width: 47vw;
+    width: 45.6vw;
 }
 .debug textarea{
-    height: 47vh;
+    background-color: white;
+    width: 45vw;
 }
 .debug form{
     align-items: center;
@@ -279,23 +287,29 @@ textarea{
 .debug nav{
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
-    height: 6vh;
+    flex-direction: row;
     justify-content: space-around;
+    height: 5vh;
+    width: 100%;
+}
+.debug nav div{
+    display: flex;
 }
 
 .debug nav button, .debug nav select{
-    background-color: rgba(18, 227, 27,0.5);
+    background-color: rgba(0, 66, 133,0.5);
     border-radius: 8px 8px 8px 8px;
     border: 1px solid black;
     color: white;
     cursor: pointer;
-    font-size: 12pt;
+    font-size: 10pt;
+    font-family: 'Bungee', cursive;
     height: 4vh;
+    margin: 0.5vh 0 0.5vh;
     text-align: center;
     text-align-last: center;
     font-weight: bold;
-    width: 100px;
+    width: 8vw;
 }
 
 .debug nav select{
@@ -310,25 +324,27 @@ textarea{
 .debug nav button:hover{
     background-color: rgba(255, 255, 255,0.5);
     transition-duration: 0.5s;
+    color: black;
+
 }
 .debug nav select:active{
-    background-color: rgba(18, 227, 27,0.5);
+    background-color: rgba(0, 66, 1330.5);
     transition-duration: 0.1s;
 }
 .debug nav button:active{
-    background-color: rgba(18, 227, 27,0.5);
+    background-color: rgba(0, 66, 133,0.5);
     transition-duration: 0.1s;
 }
 
 .debugResposta{
     align-items: center;
     display: flex;
-    height: 28vh;
-    justify-content: center;
     grid-area: erros;
-    width: 45.9vw;
+    height: 26vh;
+    justify-content: center;
+    margin-top: 10px;
+    width: 45.6vw;
 }
-
 .debugResposta textarea{
     background-color: white;
     color: black;
@@ -351,8 +367,8 @@ label {
     cursor: pointer;
     display: flex;
     height: 40px;
-    justify-self: flex-end;
-    position: absolute;
+    justify-self: end;
+    position: fixed;
     width: 40px;
 }
 .sair a{
@@ -380,37 +396,40 @@ label {
 
 .chat button{
     background-color: transparent   ;
-    border: 1px solid black;
+    border: 0;
     border-radius: 50%;
     color: white;
     cursor: pointer;
-    height: 40px;
-    width: 40px;
+    height: 48px;
+    width: 48px;
     
 }
 .chatlogo{
     background-image: url('/static/img/chatlogo.png');
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .chat textarea{
     color: white;
-    background-color: dimgray;
-    border: 1px solid black;
+    background-color: rgba(46, 46, 46,0.7);
+    border: 1px solid rgb(0, 66, 133);
     border-radius: 8px 8px 8px 8px;
-    font-size: 8pt;
+    font-size: 10pt;
     height: 43vh;
-    width: 20vw;
+    text-align: justify;
+    width: 21vw;
 }
 .chat div{
     align-items: center;
     display: flex;
     flex-direction: row;
+    margin-top: 5px;
 }
 .chat div input{
-    background-color: rgb(46, 46, 46);
-    border: 1px solid black;
+    background-color: rgba(46, 46, 46,0.7);
+    border: 1px solid rgb(0, 66, 133);
     border-radius: 8px 8px 8px 8px;
     color: white;
     height: 5vh;
@@ -419,7 +438,7 @@ label {
 }
 
 .chat div button{
-    background-color: green;
+    background-color: rgba(7, 207, 30, 0.8);
     border: 0;
     border-radius: 10px 10px 10px 10px;
     color: white;
