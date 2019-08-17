@@ -1,4 +1,5 @@
 body{
+    overflow-y: hidden;
     color: white;
     cursor: url('/static/img/kunai.cur'), auto;
     font-family: 'Bungee', cursive;
@@ -184,13 +185,22 @@ input{
     padding-left: 8px;
     background-color: rgba(0, 0, 0, 0.500);
     color: white;
+    font-weight: bold;
+}
+input:hover{
+    background-color: rgba(0, 0, 0, 0.900);
 }
 .opcoes{
+    border-color: black;
     width: 60%;
     height: 30px;
+    background-color: rgba(0, 0, 0, 0.500);
+    color: white;
+    border-radius: 3%;
 }
 .place{
-    
+    font-family: Arial;
+    font-weight: bold;
 }
 /* COLOCAR TUDO DO HTML CADASTRO NESSE ESPAÇO */
 
