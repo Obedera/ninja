@@ -88,3 +88,6 @@ def chat(request):
         resposta = analizar_resposta(texto_convertido['texto'])
         return JsonResponse({'texto':resposta}, status=200)
     return render(request, 'console.html',{})
+
+def sobre(request):
+    return render(request, 'sobre.html')
