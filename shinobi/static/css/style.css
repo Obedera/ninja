@@ -1,5 +1,5 @@
 body{
-    overflow-y: hidden;
+    overflow-x: hidden;
     color: white;
     cursor: url('/static/img/kunai.cur'), auto;
     font-family: 'Bungee', cursive;

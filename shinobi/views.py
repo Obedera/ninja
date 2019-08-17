@@ -46,7 +46,7 @@ def login(request):
             context = {'user': user}
             return render(request, 'console.html', context)
         else:
-            context = {'mensag': 'e-mail ou senha incorretos :('}
+            context = {'msg': 'e-mail ou senha incorretos :('}
             return render(request, 'cadastro.html', context)
     return render(request, 'cadastro.html')
 

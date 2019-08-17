@@ -9,7 +9,7 @@
                 {% csrf_token %}
                 <h3>Login</h3>
                     
-                {{msg}}
+                
                 
                 <input type="email" name="email" placeholder= "E-mail" required>
                     
@@ -20,6 +20,7 @@
         </div>
         <div class="botoes">
             <div id="shinobi"><a href="/"><img src="/static/img/shinobi.svg" alt=""></a></div>
+            <div>{{msg}}</div>
             <button id="btn">Faça Seu Login OU Cadastre-se</button>
             <div class="informacao">
                 <span>Saiba Mais <a href="#">></a> </span>
@@ -30,7 +31,7 @@
             <form action="/" method="POST" class="mostrar">
                 {% csrf_token %}
                 <h3>Cadastro</h3>
-                {{msg}}
+                
 
                 <input type="text" name="nome" placeholder="Nome"required>
                 
