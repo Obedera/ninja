@@ -1,6 +1,7 @@
 def analizar_html(html):
-    texto_html = html
+    texto_html = ' <'.join(html.split('<'))
     linha_html = texto_html.splitlines()
+    print(linha_html)
     Erros = ''
     if texto_html == '':
         Erros = 'Digite alguma coisa'
@@ -38,24 +39,12 @@ def analizar_html(html):
         
 
         # itens por palavra
-        if lista_palavras.count('<script') == 1 and lista_palavras.count('defer') == 0:
-            erros += 'Coloque o defer depois do script\n'
-            numero_erro += 1
-
-
-        if lista_palavras.count('<body>') == 1 or lista_palavras.count('<body') == 1:
-            pass
-        else:
-            erros += 'Você não colocou o body corretamente\n'
-            numero_erro += 1
-
-        if lista_palavras.count('<head>') == 1 or lista_palavras.count('<head') == 1:
-            pass
-        else:
-            erros += 'Você não colocou o head corretamente\n'
-            numero_erro += 1
-
-            
+        if lista_palavras.count('<script') == 1:
+            if lista_palavras.count('defer') != 0 or lista_palavras.count('defer>') != 0:
+                pass
+            else:
+                erros += 'Coloque o defer depois do script\n'
+                numero_erro += 1
 
 
         # itens por letra
@@ -87,25 +76,137 @@ def analizar_html(html):
             if lista_palavras[contador][0:7] == 'class="':
                 letras = quebrar_por_letra(lista_palavras[contador])
                 if letras.count('.') == 1:
-                    erros += f'Tem erro na linha {contador+1} tire o "." da classe\n'
+                    erros += f'Tem erro tire o "." da classe\n'
                     numero_erro += 1
 
 
-            if lista_palavras[contador] == '<bodyy>' or lista_palavras[contador] == '<bodyy':
-                erros += f'Tem erro na linha {contador+1} o "{lista_palavras[contador]}" está escrito errado\n'
-                numero_erro += 1
-
-                   
-            if lista_palavras[contador] == '<scripts':
-                erros += f'Tem erro na linha {contador+1} o "{lista_palavras[contador]}" está escrito errado\n'
-                numero_erro += 1
-
+            if lista_palavras[contador][0:3] == '<bo':
+                if lista_palavras[contador][3:6] == 'dy' or lista_palavras[contador][3:6]== 'dy>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
             
+            if lista_palavras[contador][0:3] == '<he':
+                if lista_palavras[contador][3:6] == 'ad' or lista_palavras[contador][3:6]== 'ad>' or lista_palavras[contador][3:9]== 'ader>' or lista_palavras[contador][3:9]== 'ader':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+            if lista_palavras[contador][0:3] == '<sc':
+                if lista_palavras[contador][3:8] == 'ript' or lista_palavras[contador][3:8]== 'ript>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:3] == '<na':
+                if lista_palavras[contador][3:5] == 'v' or lista_palavras[contador][3:5]== 'v>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+            if lista_palavras[contador][0:3] == '<bu':
+                if lista_palavras[contador][3:8] == 'tton' or lista_palavras[contador][3:8]== 'tton>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:3] == '<im':
+                if lista_palavras[contador][3:5] == 'g' or lista_palavras[contador][3:5]== 'g>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            
+            
+            if lista_palavras[contador][0:4] == '<mai':
+                if lista_palavras[contador][4:6] == 'n' or lista_palavras[contador][4:6]== 'n>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:4] == '<sec':
+                if lista_palavras[contador][4:9] == 'tion' or lista_palavras[contador][4:9]== 'tion>': 
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:3] == '<in':
+                if lista_palavras[contador][3:7] == 'put' or lista_palavras[contador][3:7]== 'put>': 
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+            if lista_palavras[contador][0:4] == '<for':
+                if lista_palavras[contador][4:6] == 'm' or lista_palavras[contador][4:6]== 'm>': 
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:4] == '<foo':
+                if lista_palavras[contador][4:8] == 'ter' or lista_palavras[contador][4:8]== 'ter>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+                
+            if lista_palavras[contador][0:4] == '<sel':
+                if lista_palavras[contador][4:8] == 'ect' or lista_palavras[contador][4:8]== 'ect>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:4] == '<opt':
+                if lista_palavras[contador][4:8] == 'ion' or lista_palavras[contador][4:8]== 'ion>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:4] == '<tex':
+                if lista_palavras[contador][4:10] == 'tarea' or lista_palavras[contador][4:10]== 'tarea>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:3] == '<la':
+                if lista_palavras[contador][3:7] == 'bel' or lista_palavras[contador][3:7]== 'bel>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+            if lista_palavras[contador][0:3] == '<sp':
+                if lista_palavras[contador][3:6] == 'an' or lista_palavras[contador][3:6]== 'an>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+            if lista_palavras[contador][0:3] == '<ta':
+                if lista_palavras[contador][3:7] == 'ble' or lista_palavras[contador][3:7]== 'ble>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+
             if lista_palavras[contador][0:4] == '<div':
                 divs_abertas += 1
             if lista_palavras[contador][len(lista_palavras[contador])-6:] == '</div>':
                 divs_fechadas += 1
-
+         
             contador += 1
 
         if divs_fechadas != divs_abertas:

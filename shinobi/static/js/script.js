@@ -15,7 +15,7 @@ function exibirChat(){
 
 // mover fundo
 
-let fundo = document.querySelector('body');
+let fundo = document.querySelector('.ajuste');
 let fundoX;
 let fundoY;
 
@@ -26,29 +26,23 @@ function moverFundo(e){
     fundo.style.backgroundPosition = fundoX+'px '+fundoY+'px';
 
 }
+if (document.querySelector('.login') != null){
+    fundo.addEventListener("mousemove",moverFundo);
+}
 
-fundo.addEventListener("mousemove",moverFundo);
-//function mostrarCadastro(){
-//   document.querySelector('#login').classList.toggle('invisivel');
-//   document.querySelector('#cadastro').classList.toggle('invisivel');
-//}
-
-//function mostrarLogin(){
-//    document.querySelector('#cadastro').classList.toggle('invisivel');
-//    document.querySelector('#login').classList.toggle('invisivel');
-//}
 //-----------login
 let login = document.getElementById('login');
 let cadastro = document.getElementById('cadastro');
 let x = document.getElementById('btn');
 let image = document.getElementById('shinobi');
-
-x.addEventListener('click', function(){
-  login.style.display = 'block';
-  cadastro.style.display = 'block';
-  x.style.display = 'none';
-  image.style.display = 'none';
-}); 
+if (x != null){
+    x.addEventListener('click', function(){
+      login.style.display = 'block';
+      cadastro.style.display = 'block';
+      x.style.display = 'none';
+      image.style.display = 'none';
+    }); 
+}
 
 function aumentarFonteConsole(){
     let tamanhoFonte = Number(document.querySelector('textarea[name="debugtexto"]').style.fontSize.split('pt')[0]);

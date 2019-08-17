@@ -86,6 +86,8 @@ function segurarElemento(e) {
 }
     
 function moverElemento(e) {
+    elemento.classList.remove("debugResposta");
+    elemento.classList.remove("debug");
     elemento.style.left = (e.pageX - elementoPX) + 'px';
     elemento.style.top = (e.pageY - elementoPY) + 'px';
 }
