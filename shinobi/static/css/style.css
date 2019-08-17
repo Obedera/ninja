@@ -181,10 +181,16 @@ nav{
 }
 input{
     border-radius: 3%;
+    padding-left: 8px;
+    background-color: rgba(0, 0, 0, 0.500);
+    color: white;
 }
 .opcoes{
     width: 60%;
     height: 30px;
+}
+.place{
+    
 }
 /* COLOCAR TUDO DO HTML CADASTRO NESSE ESPAÇO */
 
