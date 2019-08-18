@@ -1,277 +1,340 @@
-body{
-    overflow-x: hidden;
-    color: white;
-    cursor: url('/static/img/kunai.cur'), auto;
-    font-family: 'Bungee', cursive;
-    margin: 0;
+body {
+  overflow-x: hidden;
+  color: white;
+  cursor: url("/static/img/kunai.cur"), auto;
+  font-family: "Bungee", cursive;
+  margin: 0;
 }
-.fundos{
-    background-image: url('/static/img/fundo.jpg');
-    /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
+.fundos {
+  background-image: url("/static/img/fundo.jpg");
+  /*   background-image: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.hipwallpaper.com%2Fi%2F51%2F54%2Fxv2g7W.png&f=1');*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
 }
-nav{
-    background-color: #1c1d1f;
-    height: 30px;
+nav {
+  background-color: #1c1d1f;
+  height: 30px;
 }
 
-.arrastar{
-    background-color: rgb(0, 66, 133);
-    border-radius: 8px 8px 8px 8px;
-    border: 1px solid black;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 18pt;
-    position: absolute;
-    text-align: center;
-    user-select: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+.arrastar {
+  background-color: rgb(0, 66, 133);
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid black;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Permanent Marker", cursive;
+  font-size: 18pt;
+  position: absolute;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 /* PARA HTML DO CADASTRO */
-.login{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 100vh;
-    width: 99vw;
-    transition: 1s;
+.login {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh;
+  width: 99vw;
+  transition: 1s;
 }
-.flogin{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    padding: 10%;
+.rodape {
+  background-color: lightgray;
+  font-size: 20px;
+  display: flex;
+  padding-left: 260px;
+  padding-right: 220px;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
 }
-.flogin input{
-    margin: 3px;
-    width: 100%;
-    height: 40px;
-    border-radius: 3px;
-    border: 0;
-}
-#shinobi{
-    display: flex;
-    justify-content: center;
-    transition: 0.2s;
-}
-#shinobi:hover{
-    transform: rotateY(180deg);
-    transition: 0.5s;
-}
-#shinobi img{
-    width: 200px;
-    transition: 0.5s;
-}
-#shinobi img:hover{
-  /*  transform: rotateY(180deg);*/
-    width: 180px;
-    transition: 0.2s;
-}
-.botoes{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-}
-#btn{
-    align-items: center;
-    background-color: rgba(0, 66, 133, 0.5);
-    border: 0;
-    border-radius: 3px;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    font-family: 'Bungee', cursive;
-    height: 40px;
-    transition: 1s;
-}
-#btn:hover{
-    font-size: 15px;
-    background-color: white;
-    color: black;
-    opacity: 0.5;
-    transition: 2s;
-}
-#login{
-    background-color: rgba(0, 66, 133, 0.5);
-    display: none;
-    height: 100%;
-    width: 35%;
-    border-radius: 3px;
-    border-radius: 8px 8px 8px 8px;
-    border: 1px solid black;
-    transition: 1s;
-}
-#cadastro{
-    background-color: rgba(0, 66, 133, 0.5);
-    display: none;
-    height: 100%;
-    width: 35%;
-    border-radius: 3px;
-    border-radius: 8px 8px 8px 8px;
-    border: 1px solid black;
-    transition: 1s;
-}
-.mostrar{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-    width: 100%;
-}
-.mostrar input{
-    margin: 10px;
-    width: 70%;
-    height: 40px;
-    border-radius: 3px;
-    border: 0;
+.rodape a {
+  text-decoration: none;
+  color: lightslategray;
 }
 
-.informacao{
-    align-items: center;
-    background-color: rgba(0, 66, 133, 0.5);
-    display: flex;
-    height: 40px;
-    justify-content: center;
-    border-radius: 3px;
-    transition: 0.5s;
+.icn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
-.informacao:hover{
-    font-size: 19px;
-    background-color: white;
-    color: black;
-    opacity: 0.5;
-    transition: 1s;
+.img3 {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
 }
-.ajuste{
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.300);
-    background-image: url('/static/img/fundo.jpg');
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+.img4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
-.ajuste  h1{
-    color: rgb(0, 66, 133);
-    font-family: 'Permanent Marker', cursive;
-    font-size: 60px;
-    margin: 0;
-    
+.caixa:hover {
+  background-color: rgb(0, 66, 133);
+}
+.flogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  padding: 10%;
+}
+.flogin input {
+  margin: 3px;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: 0;
+}
+#shinobi {
+  display: flex;
+  justify-content: center;
+  transition: 0.2s;
+}
+#shinobi:hover {
+  transform: rotateY(180deg);
+  transition: 0.5s;
+}
+#shinobi img {
+  width: 200px;
+  transition: 0.5s;
+}
+#shinobi img:hover {
+  /*  transform: rotateY(180deg);*/
+  width: 180px;
+  transition: 0.2s;
+}
+.botoes {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+#btn {
+  align-items: center;
+  background-color: rgba(0, 66, 133, 0.5);
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-family: "Bungee", cursive;
+  height: 40px;
+  transition: 1s;
+}
+#btn:hover {
+  font-size: 15px;
+  background-color: white;
+  color: black;
+  opacity: 0.5;
+  transition: 2s;
+}
+#login {
+  background-color: rgba(0, 66, 133, 0.5);
+  display: none;
+  height: 100%;
+  width: 35%;
+  border-radius: 3px;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid black;
+  transition: 1s;
+}
+#cadastro {
+  background-color: rgba(0, 66, 133, 0.5);
+  display: none;
+  height: 100%;
+  width: 35%;
+  border-radius: 3px;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid black;
+  transition: 1s;
+}
+.mostrar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  width: 100%;
+}
+.mostrar input {
+  margin: 10px;
+  width: 70%;
+  height: 40px;
+  border-radius: 3px;
+  border: 0;
+}
+
+.informacao {
+  align-items: center;
+  background-color: rgba(0, 66, 133, 0.5);
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+.informacao:hover {
+  font-size: 19px;
+  background-color: white;
+  color: black;
+  opacity: 0.5;
+  transition: 1s;
+}
+.ajuste {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-image: url("/static/img/fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 .ajuste h1 {
-    text-shadow: -1px 0 black, 0 1px black,
-    1px 0 black, 0 -1px black
+  color: rgb(0, 66, 133);
+  font-family: "Permanent Marker", cursive;
+  font-size: 60px;
+  margin: 0;
 }
-.ajuste a{
-    text-decoration: none; 
+.ajuste h1 {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-input{
-    border-radius: 3%;
-    padding-left: 8px;
-    background-color: rgba(0, 0, 0, 0.500);
-    color: white;
-    font-weight: bold;
+.ajuste a {
+  text-decoration: none;
 }
-input:hover{
-    background-color: rgba(0, 0, 0, 0.900);
+input {
+  border-radius: 3%;
+  padding-left: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
 }
-.opcoes{
-    border-color: black;
-    width: 60%;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.500);
-    color: white;
-    border-radius: 3%;
+input:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
-.place{
-    font-family: Arial;
-    font-weight: bold;
+.opcoes {
+  border-color: black;
+  width: 60%;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 3%;
 }
+.place {
+  font-family: Arial;
+  font-weight: bold;
+}
+.travis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.icone {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.img2 {
+  justify-content: space-around;
+  display: flex;
+  height: 50vh;
+  align-items: center;
+}
+.icone img {
+  height: 100px;
+  width: 100px;
+}
+.travis p {
+  margin-top: 20px;
+  font-size: 25px;
+  color: #a09f9f;
+}
+
 /* COLOCAR TUDO DO HTML CADASTRO NESSE ESPAÇO */
 
 /* PARA HTML DO CONSOLE */
-.console{
-    padding-top: 40px;
-    display: grid;
-    grid-template-areas: 'user debug'
-                         'user erros';
-    
+.console {
+  padding-top: 40px;
+  display: grid;
+  grid-template-areas:
+    "user debug"
+    "user erros";
 }
 /* PERFIL CONSOLE */
-.console .user{
-    grid-area: user;
+.console .user {
+  grid-area: user;
 }
-.console main{
-    position: fixed;
+.console main {
+  position: fixed;
 }
-.console main .perfil{
-    background-color: rgba(0, 66, 133,0.8);
-    border-radius: 0px 8px 8px 0px;
-    border: 1px solid black;
-    margin-bottom: 5vh;
+.console main .perfil {
+  background-color: rgba(0, 66, 133, 0.8);
+  border-radius: 0px 8px 8px 0px;
+  border: 1px solid black;
+  margin-bottom: 5vh;
 }
-.console main div:hover{
-    background-color: rgba(255, 255, 255, 0.5);
-    transition-duration: 0.5s;
+.console main div:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.5s;
 }
-.console main div:hover p{
-    color: black;
+.console main div:hover p {
+  color: black;
 }
-.console main div:hover button{
-    color: black;
+.console main div:hover button {
+  color: black;
 }
-.console .quadradouser img{
-    border: 1px solid black;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
+.console .quadradouser img {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
-.dadosuser{
-    margin-right: 20px;
+.dadosuser {
+  margin-right: 20px;
 }
-.perfil p{
-    margin: 5px 0 5px;
-    color: white;
-    font-weight: 200;
+.perfil p {
+  margin: 5px 0 5px;
+  color: white;
+  font-weight: 200;
 }
-.perfil button{
-    background-color: transparent;
-    border: 0;
-    color: white;
-    cursor: pointer;
-    font-family: 'Bungee', cursive;
-    font-size: 12pt;
-    margin: 5px 0 5px;
-    width: 90%;
-    font-weight: 200;
+.perfil button {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  font-family: "Bungee", cursive;
+  font-size: 12pt;
+  margin: 5px 0 5px;
+  width: 90%;
+  font-weight: 200;
 }
 
-.quadradouser{
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    padding-right: 5px;
+.quadradouser {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding-right: 5px;
 }
 
 /* DEBUGADOR CONSOLE */
-label,textarea {
-    font-size: .8rem;
-    letter-spacing: 1px;
+label,
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
 }
 
 textarea{
@@ -305,56 +368,56 @@ textarea{
     text-align: center;
 }
 
-.debug nav{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 5vh;
-    width: 100%;
+.debug nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 5vh;
+  width: 100%;
 }
-.debug nav div{
-    display: flex;
-}
-
-.debug nav button, .debug nav select{
-    background-color: rgba(0, 66, 133,0.5);
-    border-radius: 8px 8px 8px 8px;
-    border: 1px solid black;
-    color: white;
-    cursor: pointer;
-    font-size: 10pt;
-    font-family: 'Bungee', cursive;
-    height: 4vh;
-    margin: 0.5vh 0 0.5vh;
-    text-align: center;
-    text-align-last: center;
-    font-weight: bold;
-    width: 8vw;
+.debug nav div {
+  display: flex;
 }
 
-.debug nav select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
+.debug nav button,
+.debug nav select {
+  background-color: rgba(0, 66, 133, 0.5);
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid black;
+  color: white;
+  cursor: pointer;
+  font-size: 10pt;
+  font-family: "Bungee", cursive;
+  height: 4vh;
+  margin: 0.5vh 0 0.5vh;
+  text-align: center;
+  text-align-last: center;
+  font-weight: bold;
+  width: 8vw;
 }
-.debug nav select:hover{
-    background-color: rgba(255, 255, 255,0.5);
-    transition-duration: 0.5s;
-    color: black;
-}
-.debug nav button:hover{
-    background-color: rgba(255, 255, 255,0.5);
-    transition-duration: 0.5s;
-    color: black;
 
+.debug nav select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
-.debug nav select:active{
-    background-color: rgba(0, 66, 1330.5);
-    transition-duration: 0.1s;
+.debug nav select:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.5s;
+  color: black;
 }
-.debug nav button:active{
-    background-color: rgba(0, 66, 133,0.5);
-    transition-duration: 0.1s;
+.debug nav button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition-duration: 0.5s;
+  color: black;
+}
+.debug nav select:active {
+  background-color: rgba(0, 66, 1330.5);
+  transition-duration: 0.1s;
+}
+.debug nav button:active {
+  background-color: rgba(0, 66, 133, 0.5);
+  transition-duration: 0.1s;
 }
 
 .debugResposta{
@@ -371,62 +434,61 @@ textarea{
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 /* BOTAO SAIR CONSOLE */
-.sair{
-    align-self: flex-end;
-    background-color: rgba(255, 0, 0, 0.464);
-    background-image: url('/static/img/sair.png');
-    background-size: 40px 40px;
-    border: 1px solid black;
-    border-radius: 8px 0px 0px 8px;
-    cursor: pointer;
-    display: flex;
-    height: 40px;
-    justify-self: end;
-    position: fixed;
-    width: 40px;
+.sair {
+  align-self: flex-end;
+  background-color: rgba(255, 0, 0, 0.464);
+  background-image: url("/static/img/sair.png");
+  background-size: 40px 40px;
+  border: 1px solid black;
+  border-radius: 8px 0px 0px 8px;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-self: end;
+  position: fixed;
+  width: 40px;
 }
-.sair a{
-    height: 100%;
-    text-decoration: none;
-    width: 100%;
+.sair a {
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
 }
 
 /* PARA O CHAT*/
 
-.chat{
-    align-items: flex-end;
-    border-radius: 8px 8px 8px 8px;
-    bottom: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    position: fixed;
-    right: 5vw;
+.chat {
+  align-items: flex-end;
+  border-radius: 8px 8px 8px 8px;
+  bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: fixed;
+  right: 5vw;
 }
 
-.invisivel{
-    display: none;
+.invisivel {
+  display: none;
 }
 
-.chat button{
-    background-color: transparent   ;
-    border: 0;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    height: 48px;
-    width: 48px;
-    
+.chat button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  height: 48px;
+  width: 48px;
 }
-.chatlogo{
-    background-image: url('/static/img/chatlogo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.chatlogo {
+  background-image: url("/static/img/chatlogo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .chat textarea{
@@ -472,19 +534,14 @@ label {
     color: black;
 }
 /* erro console*/
-.error{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
 }
 /* erro console */
 
 /* COLOCAR TUDO DO HTML CONSOLE NESSE ESPAÇO */
-
-/* RESERVADO PARA OUTROS HTML */
-
-
-/* RESERVADO PARA OUTROS HTML */

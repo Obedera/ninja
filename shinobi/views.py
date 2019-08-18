@@ -91,3 +91,4 @@ def chat(request):
 
 def sobre(request):
     return render(request, 'sobre.html')
+
