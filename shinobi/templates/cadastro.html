@@ -1,58 +1,113 @@
 <!-- Pagina para Login/Cadastro e talvez outras informaçoes  -->
-{%extends 'shared/layout.html'%}
-{%block conteudo%}
-<section class="ajuste">
-    <a href="/"><h1>NINJA VIRTUAL <span>.</span></h1></a>
-    <section class="login">
-        <div id="login">
-            <form action="/login" method="POST" class="flogin">
-                {% csrf_token %}
-                <h3>Login</h3>
-                    
-                
-                
-                <input type="email" name="email" placeholder= "E-mail" required>
-                    
-                <input type="password" name="senha" placeholder="Senha" required>
-                    
-                <input type="submit" value="ENTRAR" class="place">
-            </form>           
-        </div>
-        <div class="botoes">
-            <div id="shinobi"><a href="/"><img src="/static/img/shinobi.svg" alt=""></a></div>
-            <div>{{msg}}</div>
-            <button id="btn">Faça Seu Login OU Cadastre-se</button>
-            <div class="informacao">
-                <a href="sobre">Saiba Mais</a>
-            </div>  
-        </div>
-        
-        <div id="cadastro" >
-            <form action="/" method="POST" class="mostrar">
-                {% csrf_token %}
-                <h3>Cadastro</h3>
-                
+{%extends 'shared/layout.html'%} {%block conteudo%} {% load static %}
 
-                <input type="text" name="nome" placeholder="Nome"required>
-                
-                <input type="text" name="sobrenome" placeholder="Sobrenome"required>
-                
-                <label>Gênero</label>
-                <select name="genero" required class="opcoes">
-                    <option value="MA">Masculino</option>
-                    <option value="FE">Feminino</option>
-                    <option value="OU">Outros</option>
-                </select>
-                
-                <input type="email" name="email" placeholder="E-mail"required>
-                
-                <input type="password" name="senha" placeholder="Senha" required>
-                
-        <input type="password" name="confirmar_senha" placeholder="Confirmar senha" required>
-        
-        <input type="submit" value="CADASTRAR" class="place">
-    </form>
-</div> 
+<section class="ajuste">
+  <a href="/"
+    ><h1>NINJA VIRTUAL <span>.</span></h1></a
+  >
+  <section class="login">
+    <div id="login">
+      <form action="/login" method="POST" class="flogin">
+        {% csrf_token %}
+        <h3>Login</h3>
+
+        <input type="email" name="email" placeholder="E-mail" required />
+
+        <input type="password" name="senha" placeholder="Senha" required />
+
+        <input type="submit" value="ENTRAR" class="place" />
+      </form>
+    </div>
+    <div class="botoes">
+      <div id="shinobi">
+        <a href="/"><img src="/static/img/shinobi.svg" alt=""/></a>
+      </div>
+      <div>{{ msg }}</div>
+      <button id="btn">Faça Seu Login OU Cadastre-se</button>
+      <div class="informacao">
+        <a href="sobre">Saiba Mais</a>
+      </div>
+    </div>
+
+    <div id="cadastro">
+      <form action="/" method="POST" class="mostrar">
+        {% csrf_token %}
+        <h3>Cadastro</h3>
+
+        <input type="text" name="nome" placeholder="Nome" required />
+
+        <input type="text" name="sobrenome" placeholder="Sobrenome" required />
+
+        <label>Gênero</label>
+        <select name="genero" required class="opcoes">
+          <option value="MA">Masculino</option>
+          <option value="FE">Feminino</option>
+          <option value="OU">Outros</option>
+        </select>
+
+        <input type="email" name="email" placeholder="E-mail" required />
+
+        <input type="password" name="senha" placeholder="Senha" required />
+
+        <input
+          type="password"
+          name="confirmar_senha"
+          placeholder="Confirmar senha"
+          required
+        />
+
+        <input type="submit" value="CADASTRAR" class="place" />
+      </form>
+    </div>
+  </section>
 </section>
-</section>
+<main>
+  <script src="{% static 'js/debug.js' %}" defer></script>
+  <div class="img2">
+    <div class="travis">
+      <div class="icone"><img src="static/img/coding.png" alt="" /></div>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Suspendisse
+        fragila fragila.
+      </p>
+    </div>
+
+    <div class="travis">
+      <div class="icone"><img src="static/img/desk.png" alt="" /></div>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.Suspendisse
+        fragila fragila.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="rodape">
+    <a href="#">Contact</a>
+    <a href="#">Email</a>
+    <a href="#">Support</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+
+  <div class="img3">
+        <div class="img4">
+          <div class="icn"><img src="static/img/facebook.png" alt="" /></div>
+
+        </div>
+    
+        <div class="img4">
+          <div class="icn"><img src="static/img/instagram.png" alt="" /></div>
+   
+        </div>
+        <div class="img4">
+                <div class="icn"><img src="static/img/youtube.png" alt="" /></div>
+         
+              </div>
+      </div>
+ 
+</footer>
+
 {% endblock %}
