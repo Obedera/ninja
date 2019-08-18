@@ -1,7 +1,6 @@
 def analizar_html(html):
     texto_html = ' <'.join(html.split('<'))
     linha_html = texto_html.splitlines()
-    print(linha_html)
     Erros = ''
     if texto_html == '':
         Erros = 'Digite alguma coisa'

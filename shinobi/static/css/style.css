@@ -275,9 +275,11 @@ label,textarea {
 }
 
 textarea{
+    background-color: #000a14;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
+    border: 1px solid rgb(0, 38, 206);
+    box-shadow: 1px 1px 1px rgb(31, 0, 143);
+    color: white;
     height: 50vh;
     line-height: 1.5;
     width: 45vw;
@@ -287,14 +289,10 @@ textarea{
     align-items: center;
     align-self: center;
     display: flex;
-    height: 61vh;
+    height: 60vh;
     grid-area: debug;
-    width: 45.6vw;
 }
-.debug textarea{
-    background-color: white;
-    width: 45vw;
-}
+
 .debug form{
     align-items: center;
     display: flex;
@@ -363,16 +361,13 @@ textarea{
     align-items: center;
     display: flex;
     grid-area: erros;
-    height: 26vh;
+    height: 23vh;
     justify-content: center;
     margin-top: 10px;
     width: 45.6vw;
 }
 .debugResposta textarea{
-    background-color: white;
-    color: black;
     height: 20vh;
-    width: 45vw;
 }
 
 label {
@@ -436,13 +431,14 @@ label {
 
 .chat textarea{
     color: white;
-    background-color: rgba(46, 46, 46,0.7);
-    border: 1px solid rgb(0, 66, 133);
+    background-color: rgba(0, 10, 20,0.7);
+    border: 1px solid rgb(0, 38, 206);
+    box-shadow: 1px 1px 1px rgb(31, 0, 143);
     border-radius: 8px 8px 8px 8px;
     font-size: 10pt;
     height: 43vh;
     text-align: justify;
-    width: 21vw;
+    width: 21.5vw;
 }
 .chat div{
     align-items: center;
@@ -451,7 +447,7 @@ label {
     margin-top: 5px;
 }
 .chat div input{
-    background-color: rgba(46, 46, 46,0.7);
+    background-color: rgba(0, 10, 20,0.7);
     border: 1px solid rgb(0, 66, 133);
     border-radius: 8px 8px 8px 8px;
     color: white;
@@ -461,14 +457,19 @@ label {
 }
 
 .chat div button{
-    background-color: rgba(7, 207, 30, 0.8);
-    border: 0;
+    background-color: #0e2f52;
+    border: 1px solid black;
     border-radius: 10px 10px 10px 10px;
     color: white;
     cursor: pointer;
     font-size: 16pt;
     height: 4vh;
     width: 5vw;
+}
+.chat div button:hover{
+    background-color: rgba(255, 255, 255,0.9);
+    transition-duration: 0.5s;
+    color: black;
 }
 /* erro console*/
 .error{
