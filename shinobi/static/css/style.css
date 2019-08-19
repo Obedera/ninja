@@ -216,9 +216,10 @@ input:hover {
 .travis {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
   text-align: center;
+  width: 40vw;
 }
 .icone {
   align-items: center;
@@ -232,7 +233,7 @@ input:hover {
 }
 .travis p {
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 10pt;
   color: #a09f9f;
 }
 
