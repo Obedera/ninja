@@ -55,3 +55,18 @@ function diminuirFonteConsole(){
     tamanhoFonte -= 1;
     document.querySelector('textarea[name="debugtexto"]').style.fontSize = tamanhoFonte+'pt';
 }
+
+// rolagem automatica
+
+
+function descer(){
+    let i = document.querySelector('html').scrollTop;
+    let intervalo = setInterval(() => {
+        document.querySelector('html').scrollTop = i+=2;
+        if (i >= 800){
+            clearInterval(intervalo);
+        }
+    }, 0.5); 
+    document.querySelector('footer').classList.remove('invisivel');
+    document.querySelector('.content-main').classList.remove('invisivel');   
+}
