@@ -15,7 +15,8 @@ def analizar_resposta(resposta):
     piadas_Renan = ['Na mastertech  não se pode usar null, pq tem menor de idade', 'Oi pra quem me conhece eu sou o renan, pra quem não me conhece eu sou o renan']
     piadas_Joao = ['Existe uma grande diferença entre models e top models','Fabio se você tivesse uma fabrica de lapis, ela se chamaria Fabio Castell?','Perguntaram se alguém tem nome composto, sim meu nome tem ipiranga']
     piadas_Groger = ['Imagina pensar como um humano normal, igual esses que você vê na rua','Porque a vaca na argentina fica olhando pra cima? Porque é Bois-Nos-Ares','O madara morreu agora é o obede obito','No back tem varios backs','Oq importa é oq importa','sgbd não é rgbd jo soy rebelde','cara esse cara é o cara','Nas-Views, aviões. barcos','a diferença entre lt e gt é que lt tem l e gt tem g e não é g de dragon ball','Pra esse erro é só lê','Só o python é pai','Obede você é ruim porque você é o bad','Chega na sua casa e fala path']
-    piadas = [piadas_Renan,piadas_Joao,piadas_Groger]
+    piadas_Jessica = ['Sabe qual é a url do cavalo ? www.cavalo pontocom pontocom pontocom... ']
+    piadas = [piadas_Renan,piadas_Joao,piadas_Groger,piadas_Jessica]
 
     olas = ['oi','ola','olá','eae','oh','hello','oie']
 
@@ -58,6 +59,9 @@ def analizar_resposta(resposta):
         if autor == 2:
             piada_selecionada = piadas[autor][random.randint(0,len(piadas[autor])-1)]
             return str('Autor Groger: '+piada_selecionada)
+        if autor == 3:
+            piada_selecionada = piadas[autor][random.randint(0,len(piadas[autor])-1)]
+            return str('Autora Jessica: ' +piada_selecionada)
     
     if contador.count('oque') != 0 and re.search('div',resposta) != None:
         return str('A tag <div> define uma divisão ou uma seção em um documento HTML. É usada geralmente para fazer blocos de elementos, dispondo organizadamente as informações dentro do layout, que são formatadas com CSS. A tag <div> é controlada pela CSS através de um ID, Class ou pela própria tag.'+links_ajuda)
