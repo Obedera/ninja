@@ -1,1 +1,1 @@
-gunicorn ninja.wsgi
+web: gunicorn ninja.wsgi
