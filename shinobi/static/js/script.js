@@ -40,7 +40,7 @@ if (x != null){
       login.style.display = 'block';
       cadastro.style.display = 'block';
       x.style.display = 'none';
-      image.style.display = 'none';
+    //   image.style.display = 'none';
     }); 
 }
 

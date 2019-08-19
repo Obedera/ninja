@@ -82,14 +82,14 @@ nav {
 .botoes {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 90%;
   justify-content: space-between;
 }
 #btn {
   align-items: center;
   background-color: rgba(0, 66, 133, 0.5);
-  border: 0;
-  border-radius: 3px;
+  border: 1px solid black;
+  border-radius: 8px 8px 8px 8px;
   color: white;
   cursor: pointer;
   display: flex;
@@ -106,23 +106,25 @@ nav {
 }
 #login {
   background-color: rgba(0, 66, 133, 0.5);
-  display: none;
-  height: 100%;
-  width: 35%;
   border-radius: 3px;
   border-radius: 8px 8px 8px 8px;
   border: 1px solid black;
+  display: none;
+  margin-bottom: 20px;
+  height: 100%;
   transition: 1s;
+  width: 35%;
 }
 #cadastro {
   background-color: rgba(0, 66, 133, 0.5);
-  display: none;
-  height: 100%;
-  width: 35%;
   border-radius: 3px;
   border-radius: 8px 8px 8px 8px;
   border: 1px solid black;
+  display: none;
+  height: 100%;
+  margin-bottom: 20px;
   transition: 1s;
+  width: 35%;
 }
 .mostrar {
   align-items: center;
@@ -142,11 +144,20 @@ nav {
 .informacao {
   align-items: center;
   background-color: rgba(0, 66, 133, 0.5);
+  border: 1px black solid;
+  border-radius: 8px 8px 8px 8px;
   display: flex;
   height: 40px;
   justify-content: center;
-  border-radius: 3px;
   transition: 0.5s;
+}
+
+.informacao a{
+  color: white;
+}
+
+.informacao:hover a{
+  color: black;
 }
 .informacao:hover {
   font-size: 19px;
@@ -155,6 +166,7 @@ nav {
   opacity: 0.5;
   transition: 1s;
 }
+
 .ajuste {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
@@ -334,6 +346,8 @@ footer{
 }
 .perfil p {
   margin: 5px 0 5px;
+  margin-block-start: 0;
+  margin-block-end: 0;
   color: white;
   font-weight: 200;
 }
@@ -344,9 +358,10 @@ footer{
   cursor: pointer;
   font-family: "Bungee", cursive;
   font-size: 12pt;
-  margin: 5px 0 5px;
-  width: 90%;
   font-weight: 200;
+  margin: 5px 0 5px;
+  padding: 0;
+  width: 90%;
 }
 
 .quadradouser {
@@ -413,8 +428,8 @@ textarea{
   border: 1px solid black;
   color: white;
   cursor: pointer;
-  font-size: 10pt;
-  font-family: "Bungee", cursive;
+  font-size: 12pt;
+  font-family: cursive;
   height: 4vh;
   margin: 0.5vh 0 0.5vh;
   text-align: center;
