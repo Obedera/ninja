@@ -120,7 +120,13 @@ def analizar_html(html):
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
-            
+
+            if lista_palavras[contador][0:3] == '<di':
+                if lista_palavras[contador][3:5] == 'v' or lista_palavras[contador][3:5]== 'v>':
+                    pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
             
             
             if lista_palavras[contador][0:4] == '<mai':
