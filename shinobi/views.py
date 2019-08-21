@@ -59,7 +59,7 @@ def console(request):
         if user is not None:
             linhas_bd = int(user.numero_linhas)
             erros_bd = int(user.numero_erros)
-            linhas = len(texto_convertido['texto'].split('\n'))
+            linhas = len(texto_convertido['texto'].splitlines())
             
             if texto_convertido['linguagem'] == 'H':
                 erros = analizar_html(texto_convertido['texto'])
@@ -71,7 +71,7 @@ def console(request):
                 erros = analizar_css(texto_convertido['texto'])
 
             if linhas_bd<linhas:
-                user.numero_linhas = str(linhas+linhas_bd)
+                user.numero_linhas = str(linhas)
             
             user.numero_erros = str(erros[1]+erros_bd)
             user.save()

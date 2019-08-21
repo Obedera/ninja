@@ -73,19 +73,19 @@ def analizar_js(js):
         for j in lista_palavras:
             if j[:3] == 'ale':
                 if j[3:6] != 'rt(':
-                    erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
+                    erros += f'Tem erro o "{j}" está escrito errado\n'
                     numero_erro += 1
                     
                     
             if j[:3] == 'pro':
                 if j[3:7] != 'mpt(':
-                    erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
+                    erros += f'Tem erro o "{j}" está escrito errado\n'
                     numero_erro += 1
 
 
             if j[:3] == 'fun':
                 if j[3:] != 'ction':
-                    erros += f'Tem erro na linha "{contador+1}" o "{j}" está escrito errado\n'
+                    erros += f'Tem erro o "{j}" está escrito errado\n'
                     numero_erro += 1
                 
             contador += 1
