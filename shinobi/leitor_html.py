@@ -59,6 +59,25 @@ def analizar_html(html):
         return dado
     
 
+    def fechamento(tag, lista_palavras):
+        erro = ''
+        numero = 0
+        i = 0
+        quantidade_aberta = 0
+        quantidade_fechada = 0
+        while i<len(lista_palavras):
+            if lista_palavras[i][0:(1+len(tag))] == str('<'+tag): 
+                quantidade_aberta += 1
+            if lista_palavras[i][0:(2+len(tag))] == str('</'+tag) and lista_palavras[i][(2+len(tag)):(3+len(tag))] == '>': 
+                quantidade_fechada += 1
+            i += 1
+
+        if quantidade_aberta != quantidade_fechada:
+            erro += f'A tag {tag} precisa ser fechada\n'
+            numero += 1
+        dado = [erro, numero]
+        return dado
+
     def checar_erros_palavra(lista_palavras):
         contador = 0
         divs_abertas = 0
@@ -81,14 +100,20 @@ def analizar_html(html):
 
             if lista_palavras[contador][0:3] == '<bo':
                 if lista_palavras[contador][3:6] == 'dy' or lista_palavras[contador][3:6]== 'dy>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1] 
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
             
             if lista_palavras[contador][0:3] == '<he':
                 if lista_palavras[contador][3:6] == 'ad' or lista_palavras[contador][3:6]== 'ad>' or lista_palavras[contador][3:9]== 'ader>' or lista_palavras[contador][3:9]== 'ader':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1] 
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
@@ -102,7 +127,10 @@ def analizar_html(html):
             
             if lista_palavras[contador][0:3] == '<na':
                 if lista_palavras[contador][3:5] == 'v' or lista_palavras[contador][3:5]== 'v>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
@@ -123,7 +151,10 @@ def analizar_html(html):
 
             if lista_palavras[contador][0:3] == '<di':
                 if lista_palavras[contador][3:5] == 'v' or lista_palavras[contador][3:5]== 'v>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
@@ -131,14 +162,20 @@ def analizar_html(html):
             
             if lista_palavras[contador][0:4] == '<mai':
                 if lista_palavras[contador][4:6] == 'n' or lista_palavras[contador][4:6]== 'n>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
             
             if lista_palavras[contador][0:4] == '<sec':
                 if lista_palavras[contador][4:9] == 'tion' or lista_palavras[contador][4:9]== 'tion>': 
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
@@ -152,71 +189,86 @@ def analizar_html(html):
 
             if lista_palavras[contador][0:4] == '<for':
                 if lista_palavras[contador][4:6] == 'm' or lista_palavras[contador][4:6]== 'm>': 
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
             
             if lista_palavras[contador][0:4] == '<foo':
                 if lista_palavras[contador][4:8] == 'ter' or lista_palavras[contador][4:8]== 'ter>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
                 
             if lista_palavras[contador][0:4] == '<sel':
                 if lista_palavras[contador][4:8] == 'ect' or lista_palavras[contador][4:8]== 'ect>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
             
             if lista_palavras[contador][0:4] == '<opt':
                 if lista_palavras[contador][4:8] == 'ion' or lista_palavras[contador][4:8]== 'ion>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
             
             if lista_palavras[contador][0:4] == '<tex':
                 if lista_palavras[contador][4:10] == 'tarea' or lista_palavras[contador][4:10]== 'tarea>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
             
             if lista_palavras[contador][0:3] == '<la':
                 if lista_palavras[contador][3:7] == 'bel' or lista_palavras[contador][3:7]== 'bel>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
 
             if lista_palavras[contador][0:3] == '<sp':
                 if lista_palavras[contador][3:6] == 'an' or lista_palavras[contador][3:6]== 'an>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
 
             if lista_palavras[contador][0:3] == '<ta':
                 if lista_palavras[contador][3:7] == 'ble' or lista_palavras[contador][3:7]== 'ble>':
-                    pass
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
-
-
-            if lista_palavras[contador][0:4] == '<div':
-                divs_abertas += 1
-            if lista_palavras[contador][len(lista_palavras[contador])-6:] == '</div>':
-                divs_fechadas += 1
          
             contador += 1
 
-        if divs_fechadas != divs_abertas:
-            erros += f'<div> precisa ser fechada ex: </div>\n'
-            numero_erro += 1
 
         dado = [erros,numero_erro]
         return dado
@@ -224,6 +276,7 @@ def analizar_html(html):
     itens = itens_necessarios()
     Erros += itens[0]
     numero_erros += itens[1]
+
     erros_palavra = checar_erros_palavra(lista_palavras)
     Erros += erros_palavra[0]
     numero_erros += erros_palavra[1]
