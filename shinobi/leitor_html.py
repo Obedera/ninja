@@ -57,24 +57,39 @@ def analizar_html(html):
         
         dado = [erros,numero_erro]
         return dado
-    
+        
+    tags = []
+
+    def set_tags(tag,tags):
+        tags.append(tag)
+
+    def get_tags():
+        return tags
 
     def fechamento(tag, lista_palavras):
+        tags = get_tags()
         erro = ''
         numero = 0
+        if tags.count(tag) != 0:
+            return [erro, numero]
         i = 0
         quantidade_aberta = 0
         quantidade_fechada = 0
         while i<len(lista_palavras):
-            if lista_palavras[i][0:(1+len(tag))] == str('<'+tag): 
+            if lista_palavras[i][0:(2+len(tag))] == str('<'+tag) or lista_palavras[i][0:(2+len(tag))] == str('<'+tag)+'>': 
                 quantidade_aberta += 1
-            if lista_palavras[i][0:(2+len(tag))] == str('</'+tag) and lista_palavras[i][(2+len(tag)):(3+len(tag))] == '>': 
+            if lista_palavras[i][0:(3+len(tag))] == str('</'+tag) or lista_palavras[i][0:(3+len(tag))] == str('</'+tag+'>'): 
                 quantidade_fechada += 1
             i += 1
 
-        if quantidade_aberta != quantidade_fechada:
-            erro += f'A tag {tag} precisa ser fechada\n'
+        if quantidade_aberta > quantidade_fechada:
+            erro += f'Tem {quantidade_aberta-quantidade_fechada} tag {tag} precisa ser fechada\n'
             numero += 1
+
+        if quantidade_aberta < quantidade_fechada:
+            erro += f'Tem {quantidade_fechada-quantidade_aberta} tag {tag} foi fechada porém ela não foi aberta\n'
+            numero += 1
+        set_tags(tag,tags)
         dado = [erro, numero]
         return dado
 
