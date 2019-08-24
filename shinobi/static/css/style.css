@@ -304,7 +304,11 @@ footer{
   -moz-user-select: none;
   -ms-user-select: none;
 }
-
+.arrastar:active{
+  background-color: white;
+  color: black;
+  transition-duration: 1s;
+}
 .console {
   padding-top: 40px;
   display: grid;
