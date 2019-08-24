@@ -531,7 +531,7 @@ label {
   width: 48px;
 }
 .chatlogo {
-  background-image: url("/static/img/chatlogo.png");
+  background-image: url("/static/img/chatlogo.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
