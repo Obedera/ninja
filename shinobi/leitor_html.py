@@ -26,10 +26,40 @@ def analizar_html(html):
             palavra = lista_palavras[contador_letra_html]
             for letra in palavra:
                 letras.append(letra)
+            letras.append('$')
             contador_letra_html += 1
         return letras
     
     lista_letras = quebrar_por_letra(lista_palavras)
+
+    def pegar_conteudo_tags(lista_letras):
+        lista = []
+        aux = ''
+        i = 0
+        while i<len(lista_letras):
+            if lista_letras[i] == '<':
+                while lista_letras[i] != '>':
+
+                    if lista_letras[i] == '=':
+                        i += 2
+                        while lista_letras[i] != '"':
+                            i += 1
+
+                    aux += lista_letras[i]
+                    i += 1
+                aux = ''.join(aux.split('"'))                
+                aux = ' '.join(aux.split('$'))
+                lista.append(aux[1:])
+                aux = ''
+            i += 1
+        
+        return lista
+
+    
+    
+
+    print(pegar_conteudo_tags(lista_letras))
+
 
     def itens_necessarios():
         erros = ''
@@ -54,7 +84,8 @@ def analizar_html(html):
         if lista_letras.count('<') < lista_letras.count('>'):
             erros += 'Você esqueceu de colocar "<"\n'
             numero_erro += 1
-        
+        if lista_letras.count('<') == lista_letras.count('>'):
+            print('tudo certo')
         dado = [erros,numero_erro]
         return dado
         
