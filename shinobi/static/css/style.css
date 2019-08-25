@@ -307,7 +307,6 @@ footer{
 .arrastar:active{
   background-color: white;
   color: black;
-  transition-duration: 1s;
 }
 .console {
   padding-top: 40px;

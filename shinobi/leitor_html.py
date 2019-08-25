@@ -55,6 +55,9 @@ def analizar_html(html):
         
         return lista
 
+    # def analizar_conteudo_tags(lista):
+    #     erros = ''
+    #     numero_erro = 0
     
     
 
@@ -167,6 +170,16 @@ def analizar_html(html):
             if lista_palavras[contador][0:3] == '<sc':
                 if lista_palavras[contador][3:8] == 'ript' or lista_palavras[contador][3:8]== 'ript>':
                     pass
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+            
+            if lista_palavras[contador][0:4] == '<met':
+                if lista_palavras[contador][4:6] == 'a' or lista_palavras[contador][4:6]== 'a>': 
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
@@ -285,6 +298,16 @@ def analizar_html(html):
             
             if lista_palavras[contador][0:3] == '<la':
                 if lista_palavras[contador][3:7] == 'bel' or lista_palavras[contador][3:7]== 'bel>':
+                    tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
+                    dado_fechamento = fechamento(tag,lista_palavras)
+                    erros += dado_fechamento[0] 
+                    numero_erro += dado_fechamento[1]
+                else:
+                    erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
+                    numero_erro += 1
+
+            if lista_palavras[contador][0:3] == '<ti':
+                if lista_palavras[contador][3:7] == 'tle' or lista_palavras[contador][3:7]== 'tle>':
                     tag = lista_palavras[contador][1:(len(lista_palavras[contador])-1)]
                     dado_fechamento = fechamento(tag,lista_palavras)
                     erros += dado_fechamento[0] 
