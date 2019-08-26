@@ -55,14 +55,27 @@ def analizar_html(html):
         
         return lista
 
-    # def analizar_conteudo_tags(lista):
-    #     erros = ''
-    #     numero_erro = 0
-    
-    
+    atributos_tags = ['accept', 'accept-charset', 'action', 'alt', 'autobuffer', 'autocomplete', 'autofocus', 'autoplay', 'async', 'charset', 'checked', 'cite', 'class', 'cols', 'colspan', 'content', 'coords', 'controls', 'data', 'datetime', 'default', 'defer', 'dir', 'disable', 'enctype', 'for', 'form', 'formaction', 'formentype', 'formmethod', 'formnovalidate', 'formtarget', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'html', 'http-equiv', 'icon', 'id', 'initial-scale', 'ismap', 'label', 'lang', 'list', 'loop', 'low', 'manifest', 'max', 'maxlength', 'min', 'media', 'method', 'multiple', 'name', 'object', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onauxclick', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onfullscreenchange', 'onfullscreenerror', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadend', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmozfullscreenchange', 'onmozfullscreenerror', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onshow', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onvolumechange', 'onwaiting', 'onwebkitanimationend', 'onwebkitanimationiteration', 'onwebkitanimationstart', 'onwebkittransitionend', 'open', 'optimum', 'pattern', 'ping', 'placeholder', 'poster', 'radiogroup', 'readonly', 'rel', 'replace', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'seamless', 'selected', 'shape', 'sizes', 'sizr', 'span', 'src', 'start', 'step', 'style', 'target', 'title', 'type', 'usempa', 'value', 'wrap', 'width']
 
-    print(pegar_conteudo_tags(lista_letras))
+    def analizar_conteudo_tags(lista):
+        atributos = []
+        aux = []
+        erro = ''
+        numero_erro = 0
+        i = 0
+        while i<len(lista):
+            aux = lista[i].split(' ')
+            aux.remove(aux[0])
+            atributos.extend(aux)
+            i += 1
 
+        for j in atributos:
+            if atributos_tags.count(j) == 0:
+                erro += f'O atributo "{j}" não existe\n'
+                numero_erro += 1 
+        
+        return [erro,numero_erro]
+    
 
     def itens_necessarios():
         erros = ''
@@ -88,7 +101,10 @@ def analizar_html(html):
             erros += 'Você esqueceu de colocar "<"\n'
             numero_erro += 1
         if lista_letras.count('<') == lista_letras.count('>'):
-            print('tudo certo')
+            dados_tags = analizar_conteudo_tags(pegar_conteudo_tags(lista_letras))
+            erros += dados_tags[0]
+            numero_erro += dados_tags[1]
+
         dado = [erros,numero_erro]
         return dado
         
