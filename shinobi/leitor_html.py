@@ -11,9 +11,8 @@ def analizar_html(html):
             i += 1
         return aux
 
-
-    texto_html = ' <'.join(html.split('<'))
-    texto_html = remover_comentario(texto_html)
+    texto_html = remover_comentario(html)
+    texto_html = ' <'.join(texto_html.split('<'))
     linha_html = texto_html.splitlines()
     Erros = ''
     if texto_html == '':
