@@ -1,5 +1,19 @@
 def analizar_html(html):
+    def remover_comentario(texto):
+        i = 0
+        aux = ''
+        while i<len(texto):
+            if texto[i:(i+4)] == '<!--':
+                while texto[(i-3):i] != '-->':
+                    i += 1
+
+            aux += texto[i:(i+1)]
+            i += 1
+        return aux
+
+
     texto_html = ' <'.join(html.split('<'))
+    texto_html = remover_comentario(texto_html)
     linha_html = texto_html.splitlines()
     Erros = ''
     if texto_html == '':
@@ -55,7 +69,7 @@ def analizar_html(html):
         
         return lista
 
-    atributos_tags = ['accept', 'accept-charset', 'action', 'alt', 'autobuffer', 'autocomplete', 'autofocus', 'autoplay', 'async', 'charset', 'checked', 'cite', 'class', 'cols', 'colspan', 'content', 'coords', 'controls', 'data', 'datetime', 'default', 'defer', 'dir', 'disable', 'enctype', 'for', 'form', 'formaction', 'formentype', 'formmethod', 'formnovalidate', 'formtarget', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'html', 'http-equiv', 'icon', 'id', 'initial-scale', 'ismap', 'label', 'lang', 'list', 'loop', 'low', 'manifest', 'max', 'maxlength', 'min', 'media', 'method', 'multiple', 'name', 'object', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onauxclick', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onfullscreenchange', 'onfullscreenerror', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadend', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmozfullscreenchange', 'onmozfullscreenerror', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onshow', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onvolumechange', 'onwaiting', 'onwebkitanimationend', 'onwebkitanimationiteration', 'onwebkitanimationstart', 'onwebkittransitionend', 'open', 'optimum', 'pattern', 'ping', 'placeholder', 'poster', 'radiogroup', 'readonly', 'rel', 'replace', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'seamless', 'selected', 'shape', 'sizes', 'sizr', 'span', 'src', 'start', 'step', 'style', 'target', 'title', 'type', 'usempa', 'value', 'wrap', 'width']
+    atributos_tags = ['','accept', 'accept-charset', 'action', 'alt', 'autobuffer', 'autocomplete', 'autofocus', 'autoplay', 'async', 'charset', 'checked', 'cite', 'class', 'cols', 'colspan', 'content', 'coords', 'controls', 'data', 'datetime', 'default', 'defer', 'dir', 'disable', 'enctype', 'for', 'form', 'formaction', 'formentype', 'formmethod', 'formnovalidate', 'formtarget', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'html', 'http-equiv', 'icon', 'id', 'initial-scale', 'ismap', 'label', 'lang', 'list', 'loop', 'low', 'manifest', 'max', 'maxlength', 'min', 'media', 'method', 'multiple', 'name', 'object', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onauxclick', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onfullscreenchange', 'onfullscreenerror', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadend', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmozfullscreenchange', 'onmozfullscreenerror', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onshow', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onvolumechange', 'onwaiting', 'onwebkitanimationend', 'onwebkitanimationiteration', 'onwebkitanimationstart', 'onwebkittransitionend', 'open', 'optimum', 'pattern', 'ping', 'placeholder', 'poster', 'radiogroup', 'readonly', 'rel', 'replace', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'seamless', 'selected', 'shape', 'sizes', 'sizr', 'span', 'src', 'start', 'step', 'style', 'target', 'title', 'type', 'usempa', 'value', 'wrap', 'width']
 
     def analizar_conteudo_tags(lista):
         atributos = []
