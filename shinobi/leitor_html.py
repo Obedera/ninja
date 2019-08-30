@@ -69,7 +69,7 @@ def analizar_html(html):
         return lista
 
     atributos_tags = ['','accept', 'accept-charset', 'action', 'alt', 'autobuffer', 'autocomplete', 'autofocus', 'autoplay', 'async', 'charset', 'checked', 'cite', 'class', 'cols', 'colspan', 'content', 'coords', 'controls', 'data', 'datetime', 'default', 'defer', 'dir', 'disable', 'enctype', 'for', 'form', 'formaction', 'formentype', 'formmethod', 'formnovalidate', 'formtarget', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'html', 'http-equiv', 'icon', 'id', 'initial-scale', 'ismap', 'label', 'lang', 'list', 'loop', 'low', 'manifest', 'max', 'maxlength', 'min', 'media', 'method', 'multiple', 'name', 'object', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onauxclick', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onfullscreenchange', 'onfullscreenerror', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadend', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmozfullscreenchange', 'onmozfullscreenerror', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onshow', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onvolumechange', 'onwaiting', 'onwebkitanimationend', 'onwebkitanimationiteration', 'onwebkitanimationstart', 'onwebkittransitionend', 'open', 'optimum', 'pattern', 'ping', 'placeholder', 'poster', 'radiogroup', 'readonly', 'rel', 'replace', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'seamless', 'selected', 'shape', 'sizes', 'sizr', 'span', 'src', 'start', 'step', 'style', 'target', 'title', 'type', 'usempa', 'value', 'wrap', 'width']
-
+    tags_html = ['!DOCTYPE','a','area','article','aside','audio','base','body','br','button','canvas','center','div','embed','fieldset','form','h1','h2','h3','h4','h5','h6','head','header','hr','html','img','input','label','li','link','map','main','meta','nav','ol','option','p','script','select','span','style','table','td','textarea','title','tr','ul','video'] 
     def analizar_conteudo_tags(lista):
         atributos = []
         aux = []
@@ -95,10 +95,9 @@ def analizar_html(html):
         numero_erro = 0
         #itens por linha
         
-
         # itens por palavra
-        if lista_palavras.count('<script') == 1:
-            if lista_palavras.count('defer') != 0 or lista_palavras.count('defer>') != 0:
+        if lista_palavras.count('<script') != 0:
+            if (lista_palavras.count('defer')+lista_palavras.count('defer>')) == lista_palavras.count('<script'):
                 pass
             else:
                 erros += 'Coloque o defer depois do script\n'
@@ -165,16 +164,30 @@ def analizar_html(html):
 
         while contador<len(lista_palavras):
             if lista_palavras[contador] == '<':
-                erros += f'Tem erro na linha {contador+1} tire o espaçamento do "<" entre o "{lista_palavras[contador+1]}"\n'
+                erros += f'Tem erro tire o espaçamento do "<" entre o "{lista_palavras[contador+1]}"\n'
                 numero_erro += 1
 
-            
+            if lista_palavras[contador][0:1] == '<' and lista_palavras[contador][1:2] != '/':
+                tag = lista_palavras[contador][1:].split('>')
+                if tags_html.count(tag[0]) == 0:
+                    erros += f'Tem erro a tag "{lista_palavras[contador]} não existe"\n' 
+                    numero_erro += 1
+
             if lista_palavras[contador][0:7] == 'class="':
                 letras = quebrar_por_letra(lista_palavras[contador])
                 if letras.count('.') == 1:
                     erros += f'Tem erro tire o "." da classe\n'
                     numero_erro += 1
 
+            if lista_palavras[contador][0:2] == '</':
+                    tag = lista_palavras[contador][2:].split('>')
+                    if tags_html.count(tag[0]) != 0:
+                        dado_fechamento = fechamento(tag[0],lista_palavras)
+                        erros += dado_fechamento[0] 
+                        numero_erro += dado_fechamento[1]
+                    else:
+                        erros += f'Tem erro a tag "{lista_palavras[contador]} não existe"\n' 
+                        numero_erro += 1
 
             if lista_palavras[contador][0:3] == '<as':
                 if lista_palavras[contador][3:7] == 'ide' or lista_palavras[contador][3:7]== 'ide>':
