@@ -163,15 +163,11 @@ def analizar_html(html):
         numero_erro = 0
 
         while contador<len(lista_palavras):
+            aux = numero_erro
+
             if lista_palavras[contador] == '<':
                 erros += f'Tem erro tire o espaçamento do "<" entre o "{lista_palavras[contador+1]}"\n'
                 numero_erro += 1
-
-            if lista_palavras[contador][0:1] == '<' and lista_palavras[contador][1:2] != '/':
-                tag = lista_palavras[contador][1:].split('>')
-                if tags_html.count(tag[0]) == 0:
-                    erros += f'Tem erro a tag "{lista_palavras[contador]} não existe"\n' 
-                    numero_erro += 1
 
             if lista_palavras[contador][0:7] == 'class="':
                 letras = quebrar_por_letra(lista_palavras[contador])
@@ -403,6 +399,14 @@ def analizar_html(html):
                 else:
                     erros += f'Tem erro o "{lista_palavras[contador]}" está escrito errado\n'
                     numero_erro += 1
+            
+            if aux == numero_erro:
+                if lista_palavras[contador][0:1] == '<' and lista_palavras[contador][1:2] != '/':
+                    tag = lista_palavras[contador][1:].split('>')
+                    if tags_html.count(tag[0]) == 0:
+                        erros += f'Tem erro a tag "{lista_palavras[contador]} não existe"\n' 
+                        numero_erro += 1
+
          
             contador += 1
 
