@@ -104,3 +104,13 @@ quadradoResposta.addEventListener("mousedown",segurarElemento);
 function exibirPerfil(){
     document.querySelector('div[name="perfilUser"]').classList.toggle('invisivel');
 }
+// funcao enter html:5
+function pegarTecla(event){
+    if(event.keyCode == 13){
+        let areatexto = document.querySelector('textarea[name="debugtexto"]').value; 
+        if (areatexto=='html:5'){
+            return grabFormDataDebug();
+        }
+    }
+}
+document.addEventListener('keydown', pegarTecla);
