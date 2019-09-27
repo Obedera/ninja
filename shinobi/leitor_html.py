@@ -1,4 +1,8 @@
 def analizar_html(html):
+
+    if html == '':
+        return ['Digite alguma coisa',0]
+
     def remover_comentario(texto):
         i = 0
         aux = ''
@@ -12,11 +16,11 @@ def analizar_html(html):
         return aux
 
     texto_html = remover_comentario(html)
+    # espacamento para evitar bugs
     texto_html = ' <'.join(texto_html.split('<'))
     linha_html = texto_html.splitlines()
+
     Erros = ''
-    if texto_html == '':
-        Erros = 'Digite alguma coisa'
     numero_erros = 0  
 
 
@@ -39,6 +43,7 @@ def analizar_html(html):
             palavra = lista_palavras[contador_letra_html]
             for letra in palavra:
                 letras.append(letra)
+            # o "$" é para o separador de linhas
             letras.append('$')
             contador_letra_html += 1
         return letras
@@ -50,19 +55,21 @@ def analizar_html(html):
         aux = ''
         i = 0
         while i<len(lista_letras):
-            if lista_letras[i] == '<':
+            if lista_letras[i-1] == '<':
                 while lista_letras[i] != '>':
-
+                
+                    #remover o '=""'
                     if lista_letras[i] == '=':
                         i += 2
                         while lista_letras[i] != '"':
                             i += 1
+                        lista_letras[i] = ''
 
                     aux += lista_letras[i]
                     i += 1
-                aux = ''.join(aux.split('"'))                
+                              
                 aux = ' '.join(aux.split('$'))
-                lista.append(aux[1:])
+                lista.append(aux)
                 aux = ''
             i += 1
         
@@ -70,6 +77,7 @@ def analizar_html(html):
 
     atributos_tags = ['','accept', 'accept-charset', 'action', 'alt', 'autobuffer', 'autocomplete', 'autofocus', 'autoplay', 'async', 'charset', 'checked', 'cite', 'class', 'cols', 'colspan', 'content', 'coords', 'controls', 'data', 'datetime', 'default', 'defer', 'dir', 'disable', 'enctype', 'for', 'form', 'formaction', 'formentype', 'formmethod', 'formnovalidate', 'formtarget', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'html', 'http-equiv', 'icon', 'id', 'initial-scale', 'ismap', 'label', 'lang', 'list', 'loop', 'low', 'manifest', 'max', 'maxlength', 'min', 'media', 'method', 'multiple', 'name', 'object', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onauxclick', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'onclose', 'oncontextmenu', 'oncopy', 'oncuechange', 'oncut', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragexit', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onfullscreenchange', 'onfullscreenerror', 'ongotpointercapture', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadend', 'onloadstart', 'onlostpointercapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmozfullscreenchange', 'onmozfullscreenerror', 'onpaste', 'onpause', 'onplay', 'onplaying', 'onpointercancel', 'onpointerdown', 'onpointerenter', 'onpointerleave', 'onpointermove', 'onpointerout', 'onpointerover', 'onpointerup', 'onprogress', 'onratechange', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onselectstart', 'onshow', 'onstalled', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onvolumechange', 'onwaiting', 'onwebkitanimationend', 'onwebkitanimationiteration', 'onwebkitanimationstart', 'onwebkittransitionend', 'open', 'optimum', 'pattern', 'ping', 'placeholder', 'poster', 'radiogroup', 'readonly', 'rel', 'replace', 'required', 'reversed', 'rows', 'rowspan', 'sandbox', 'scope', 'scoped', 'seamless', 'selected', 'shape', 'sizes', 'sizr', 'span', 'src', 'start', 'step', 'style', 'target', 'title', 'type', 'usempa', 'value', 'wrap', 'width']
     tags_html = ['!DOCTYPE','a','area','article','aside','audio','base','body','br','button','canvas','center','div','embed','fieldset','form','h1','h2','h3','h4','h5','h6','head','header','hr','html','img','input','label','li','link','map','main','meta','nav','ol','option','p','script','section','select','span','style','table','td','textarea','title','tr','ul','video'] 
+    
     def analizar_conteudo_tags(lista):
         atributos = []
         aux = []
@@ -119,7 +127,7 @@ def analizar_html(html):
 
         dado = [erros,numero_erro]
         return dado
-        
+    # tags que o usuario utilizou
     tags = []
 
     def set_tags(tag,tags):
@@ -152,8 +160,8 @@ def analizar_html(html):
             erro += f'Tem {quantidade_fechada-quantidade_aberta} tag {tag} foi fechada porém ela não foi aberta\n'
             numero += 1
         set_tags(tag,tags)
-        dado = [erro, numero]
-        return dado
+        
+        return [erro, numero]
 
     def checar_erros_palavra(lista_palavras):
         contador = 0
@@ -410,8 +418,7 @@ def analizar_html(html):
          
             contador += 1
 
-        dado = [erros,numero_erro]
-        return dado
+        return [erros,numero_erro]
 
     itens = itens_necessarios()
     Erros += itens[0]
@@ -424,5 +431,4 @@ def analizar_html(html):
     if Erros == '':
         Erros = 'Não detectei nenhum erro'
     
-    dados = [Erros,numero_erros]
-    return dados
+    return [Erros,numero_erros]
